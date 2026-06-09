@@ -1,0 +1,58 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xcf664",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcf6cc",
+			"name": "rctx",
+			"typename": "EVP_PKEY_CTX",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xcf7c0",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcf7e4",
+			"name": "pmeth",
+			"typename": "EVP_PKEY_METHOD",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xcf880",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcf8b4",
+			"name": "idx"
+		    },
+		    {
+			"iaddr": "0xcf8e0",
+			"name": "ret",
+			"typename": "ppEVP_PKEY_METHOD"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 20,
+			"name": "t",
+			"typename": "EVP_PKEY_METHOD",
+			"mods": ["ptrto", "cast"]
+		    },
+		    {
+			"offset": 128,
+			"name": "tmp",
+			"typename": "EVP_PKEY_METHOD"
+		    }
+		]
+	    }
+	],
+	"symbolic-addresses": {
+	    "0x16f7b4": "app_pkey_methods"
+	}
+    }
+}

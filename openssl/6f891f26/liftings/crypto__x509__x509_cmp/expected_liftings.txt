@@ -1,0 +1,163 @@
+
+// Lifted code for function 0xf3830
+// --------------------------------------------------
+// Function decompilation
+
+struct X509_name_st * X509_get_issuer_name(struct x509_st * a) {
+
+  return a->cert_info->issuer;
+}
+
+// Lifted code for function 0xf383c
+// --------------------------------------------------
+// Function decompilation
+
+struct X509_name_st * X509_get_subject_name(struct x509_st * a) {
+
+  return a->cert_info->subject;
+}
+
+// Lifted code for function 0xf3848
+// --------------------------------------------------
+// Function decompilation
+
+struct asn1_string_st * X509_get_serialNumber(struct x509_st * a) {
+
+  return a->cert_info->serialNumber;
+}
+
+// Lifted code for function 0xf3868
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_pkey_st * X509_get_pubkey(struct x509_st * x) {
+  struct evp_pkey_st * ssa_R0_4;
+
+  if ((x != 0)) {
+    if ((x->cert_info != 0)) {
+      ssa_R0_4 = X509_PUBKEY_get(x->cert_info->key); // 0xf3888, BL
+      return ssa_R0_4;
+    } // if 
+  } // if 
+  return (struct evp_pkey_st *)0;
+}
+
+// Lifted code for function 0xf3a2c
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long X509_subject_name_hash_old(struct x509_st * x) {
+  unsigned long ssa_R0_2;
+
+  ssa_R0_2 = X509_NAME_hash_old(x->cert_info->subject); // 0xf3a34, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf3a38
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long X509_issuer_name_hash_old(struct x509_st * x) {
+  unsigned long ssa_R0_2;
+
+  ssa_R0_2 = X509_NAME_hash_old(x->cert_info->issuer); // 0xf3a40, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf3ab0
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long X509_subject_name_hash(struct x509_st * x) {
+  unsigned long ssa_R0_2;
+
+  ssa_R0_2 = X509_NAME_hash(x->cert_info->subject); // 0xf3ab8, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf3abc
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long X509_issuer_name_hash(struct x509_st * x) {
+  unsigned long ssa_R0_2;
+
+  ssa_R0_2 = X509_NAME_hash(x->cert_info->issuer); // 0xf3ac4, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf3b64
+// --------------------------------------------------
+// Function decompilation
+
+struct x509_st * X509_find_by_subject(struct stack_st_X509 * sk, struct X509_name_st * name) {
+  int i;
+  struct x509_st * ssa_R5_1;
+  struct x509_st * X509;
+  struct X509_name_st * rtn_X509_get_subject_name__0;
+  int rtn_X509_NAME_cmp__0;
+  int rtn_sk_num__0;
+
+  i = 0; // 0xf3b74, MOV
+  while (1) {
+    rtn_sk_num__0 = sk_num((struct stack_st *)sk); // 0xf3b9c, BL
+    i = (i + 1); // 0xf3bac, ADD
+    if ((i < rtn_sk_num__0)) {
+      X509 = sk_value((struct stack_st *)sk, i); // 0xf3b7c, BL
+      ssa_R5_1 = X509; // 0xf3b80, MOV
+      rtn_X509_get_subject_name__0 = X509_get_subject_name(X509); // 0xf3b84, BL
+      rtn_X509_NAME_cmp__0 = X509_NAME_cmp(rtn_X509_get_subject_name__0, name); // 0xf3b8c, BL
+      if ((rtn_X509_NAME_cmp__0 == 0)) {
+        break;
+      } // if 
+    } else {
+      ssa_R5_1 = 0; // 0xf3bb4, MOV
+      break;
+    } // if 
+  }  // loop 
+  return ssa_R5_1;
+}
+
+// Lifted code for function 0xf3bc4
+// --------------------------------------------------
+// Function decompilation
+
+int X509_CRL_cmp(struct X509_crl_st * a, struct X509_crl_st * b) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = X509_NAME_cmp(a->crl->issuer, b->crl->issuer); // 0xf3bd4, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf3bd8
+// --------------------------------------------------
+// Function decompilation
+
+int X509_subject_name_cmp(struct x509_st * a, struct x509_st * b) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = X509_NAME_cmp(a->cert_info->subject, b->cert_info->subject); // 0xf3be8, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf3bec
+// --------------------------------------------------
+// Function decompilation
+
+int X509_issuer_name_cmp(struct x509_st * a, struct x509_st * b) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = X509_NAME_cmp(a->cert_info->issuer, b->cert_info->issuer); // 0xf3bfc, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf3c00
+// --------------------------------------------------
+// Function decompilation
+
+int X509_CRL_match(struct X509_crl_st * a, struct X509_crl_st * b) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = memcmp(a->sha1_hash, (int *)b->sha1_hash, 20); // 0xf3c0c, BL
+  return ssa_R0_2;
+}

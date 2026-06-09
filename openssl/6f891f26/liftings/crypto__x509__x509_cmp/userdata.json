@@ -1,0 +1,100 @@
+{
+  "userdata": {
+    "function-annotations": [
+      {
+        "faddr": "0xf388c",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0xf389c",
+            "name": "xk"
+          },
+          {
+            "iaddr": "0xf38b8",
+            "name": "ret"
+          }
+        ]
+      },
+      {
+        "faddr": "0xf3974",
+        "stack-variable-introductions": [
+          {
+            "offset": 32,
+            "name": "md",
+            "typename": "unsigned char",
+            "mods": ["array:16"]
+          },
+          {
+            "offset": 56,
+            "name": "md_ctx",
+            "typename": "EVP_MD_CTX"
+          }
+        ]
+      },
+      {
+        "faddr": "0xf3a44",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0xf3a7c",
+            "name": "ret"
+          }
+        ],
+        "stack-variable-introductions": [
+          {
+            "offset": 36,
+            "name": "md",
+            "typename": "unsigned char",
+            "mods": ["array:20"]
+          }
+        ]
+      },
+      {
+        "faddr": "0xf3b64",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0xf3b74",
+            "name": "i"
+          },
+          {
+            "iaddr": "0xf3b7c",
+            "name": "X509",
+            "typename": "X509",
+            "mods": ["ptrto"]
+          }
+        ]
+      },
+      {
+        "faddr": "0xf3d78",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0xf3da8",
+            "name": "i"
+          },
+          {
+            "iaddr": "0xf3db4",
+            "name": "x509"
+          },
+          {
+            "iaddr": "0xf3d88",
+            "name": "ret",
+            "typename": "X509",
+            "mods": ["ptrto"]
+          }
+        ],
+        "stack-variable-introductions": [
+          {
+            "offset": "76",
+            "name": "cinf",
+            "typename": "X509_CINF"
+          },
+          {
+            "offset": 180,
+            "name": "x"
+          }
+        ]
+      }
+    ],
+    "function-names": {
+      "0x3aa24": "memcmp"
+    }
+  }
+}

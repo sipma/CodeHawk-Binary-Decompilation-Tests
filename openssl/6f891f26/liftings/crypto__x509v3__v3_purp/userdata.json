@@ -1,0 +1,55 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0x106260",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x1062c4",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0x1062d0",
+			"name": "gen",
+			"typename": "GENERAL_NAME",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x106334",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x106340",
+			"name": "ex_nid"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 12,
+			"name": "s_ex_nid",
+			"typename": "int"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x106dbc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x106dec",
+			"name": "count"
+		    },
+		    {
+
+			"iaddr": "0x106dc8",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0x106dd0",
+			"name": "xptmp"
+		    }
+		]
+	    }
+	]
+    }
+}

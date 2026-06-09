@@ -1,0 +1,97 @@
+
+// Lifted code for function 0xd60ec
+// --------------------------------------------------
+// Function decompilation
+
+int in_utf8(unsigned long value, int * arg) {
+
+  (*(arg)) = ((*(arg)) + 1); // 0xd60f8, STR
+  return 1;
+}
+
+// Lifted code for function 0xd6180
+// --------------------------------------------------
+// Function decompilation
+
+int cpy_utf8(unsigned long value, int * arg) {
+  int rtn_UTF8_putc__0;
+
+  rtn_UTF8_putc__0 = UTF8_putc((unsigned char *)(*(arg)), 255, value); // 0xd6194, BL
+  (*(arg)) = ((*(arg)) + rtn_UTF8_putc__0); // 0xd61a0, STR
+  return 1;
+}
+
+// Lifted code for function 0xd61ac
+// --------------------------------------------------
+// Function decompilation
+
+int out_utf8(unsigned long value, int * arg) {
+  int rtn_UTF8_putc__0;
+
+  rtn_UTF8_putc__0 = UTF8_putc(0, -1, value); // 0xd61c8, BL
+  (*(arg)) = (rtn_UTF8_putc__0 + (*(arg))); // 0xd61d0, STR
+  return 1;
+}
+
+// Lifted code for function 0xd61e0
+// --------------------------------------------------
+// Function decompilation
+
+int type_str(unsigned long value, unsigned long * arg) {
+  unsigned int types;
+  int ssa_R0_1;
+  char * rtn_strchr__0;
+
+  types = (*(arg)); // 0xd61e4, LDR
+  if ((((*(arg)) & 2) != 0)) {
+    if ((value <= 127)) {
+      if (((value - 97) <= 25)) {
+        goto L0xd6220;
+      } else {
+        if (((value - 65) <= 25)) {
+          goto L0xd6220;
+        } else {
+          if (((value - 48) <= 9)) {
+            goto L0xd6220;
+          } else {
+            if ((value == 32)) {
+              goto L0xd6220;
+            } else {
+              rtn_strchr__0 = strchr("'()+,-./:=?", (int)value); // 0xd6294, BL
+              if ((rtn_strchr__0 != 0)) {
+                goto L0xd6220;
+              } // if 
+            } // if 
+          } // if 
+        } // if 
+      } // if 
+    } // if 
+    types = ((*(arg)) & -3); // 0xd6208, BIC
+  } // if 
+  if (((((value > 127) || (value < 0)) & (types >> 4)) != 0)) {
+    types = (types & -17); // 0xd621c, BIC
+  } // if 
+   L0xd6220:
+  if (((((value > 255) || (value < 0)) & (types >> 2)) != 0)) {
+    types = (types & -5); // 0xd6230, BIC
+  } // if 
+  if (((((value >= 0x10000) || (value < 0)) & (types >> 11)) != 0)) {
+    types = (types & ~2048); // 0xd6244, BIC
+  } // if 
+  ssa_R0_1 = ((types != 0) ? 1 : -1); // 0xd6250, MOV (ternary assign)
+  if ((types != 0)) {
+    (*(arg)) = types; // 0xd6254, STR
+  } // if 
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xd6c9c
+// --------------------------------------------------
+// Function decompilation
+
+int ASN1_mbstring_copy(struct asn1_string_st * * out, unsigned char * in, int len, int inform, unsigned long mask) {
+  int rtn_ASN1_mbstring_ncopy__0;
+
+  rtn_ASN1_mbstring_ncopy__0 = ASN1_mbstring_ncopy(out, in, len, inform, mask, 0, 0); // 0xd6cb8, BL
+  return rtn_ASN1_mbstring_ncopy__0;
+}

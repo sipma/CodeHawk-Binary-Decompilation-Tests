@@ -1,0 +1,50 @@
+
+// Lifted code for function 0xd8c74
+// --------------------------------------------------
+// Function decompilation
+
+void local_sk_X509_NAME_ENTRY_free(struct stack_st_X509_NAME_ENTRY * ne) {
+
+  sk_free((struct stack_st *)ne); // 0xd8c74, BL
+  return;
+}
+
+// Lifted code for function 0xd8cdc
+// --------------------------------------------------
+// Function decompilation
+
+int x509_name_ex_new(struct ASN1_VALUE_st * * val, struct ASN1_ITEM_st * it) {
+  struct X509_name_st * ret;
+  struct stack_st * rtn_sk_new_null__0;
+  struct buf_mem_st * rtn_BUF_MEM_new__0;
+  int ssa_R0_2;
+
+  ret = CRYPTO_malloc(20, "x_name.c", 135); // 0xd8d04, BL
+  if ((ret == 0)) {
+    ERR_put_error(13, 171, 65, "x_name.c", 147); // 0xd8da8, BL
+    ssa_R0_2 = 0; // 0xd8dac, MOV
+  } else {
+    rtn_sk_new_null__0 = sk_new_null(); // 0xd8d10, BL
+    ret->entries = rtn_sk_new_null__0; // 0xd8d18, STR
+    if ((rtn_sk_new_null__0 != 0)) {
+      rtn_BUF_MEM_new__0 = BUF_MEM_new(); // 0xd8d20, BL
+      ret->bytes = rtn_BUF_MEM_new__0; // 0xd8d28, STR
+      if ((rtn_BUF_MEM_new__0 != 0)) {
+        ssa_R0_2 = 1; // 0xd8d38, MOV
+        (*(val)) = ret; // 0xd8d3c, STR
+        ret->canon_enclen = 0; // 0xd8d40, STR
+        ret->canon_enc = 0; // 0xd8d44, STR
+        ret->modified = 1; // 0xd8d48, STR
+        goto L0xd8d4c;
+      } // if 
+    } // if 
+    ERR_put_error(13, 171, 65, "x_name.c", 147); // 0xd8d6c, BL
+    if ((rtn_sk_new_null__0 != 0)) {
+      sk_free(rtn_sk_new_null__0); // 0xd8d7c, BL
+    } // if 
+    CRYPTO_free(ret); // 0xd8d84, BL
+    ssa_R0_2 = 0; // 0xd8d88, MOV
+  } // if 
+   L0xd8d4c:
+  return ssa_R0_2;
+}

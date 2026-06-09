@@ -1,0 +1,381 @@
+
+// Lifted code for function 0xf49f8
+// --------------------------------------------------
+// Function decompilation
+
+int null_callback(int ok, struct x509_store_ctx_st * e) {
+
+  return ok;
+}
+
+// Lifted code for function 0xf49fc
+// --------------------------------------------------
+// Function decompilation
+
+int X509_STORE_CTX_get_error(struct x509_store_ctx_st * ctx) {
+
+  return ctx->error;
+}
+
+// Lifted code for function 0xf4a04
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set_error(struct x509_store_ctx_st * ctx, int err) {
+
+  ctx->error = err; // 0xf4a04, STR
+  return;
+}
+
+// Lifted code for function 0xf4a0c
+// --------------------------------------------------
+// Function decompilation
+
+int X509_STORE_CTX_get_error_depth(struct x509_store_ctx_st * ctx) {
+
+  return ctx->error_depth;
+}
+
+// Lifted code for function 0xf4a14
+// --------------------------------------------------
+// Function decompilation
+
+struct x509_st * X509_STORE_CTX_get_current_cert(struct x509_store_ctx_st * ctx) {
+
+  return ctx->current_cert;
+}
+
+// Lifted code for function 0xf4a1c
+// --------------------------------------------------
+// Function decompilation
+
+struct stack_st_X509 * X509_STORE_CTX_get_chain(struct x509_store_ctx_st * ctx) {
+
+  return ctx->chain;
+}
+
+// Lifted code for function 0xf4a24
+// --------------------------------------------------
+// Function decompilation
+
+struct x509_st * X509_STORE_CTX_get0_current_issuer(struct x509_store_ctx_st * ctx) {
+
+  return ctx->current_issuer;
+}
+
+// Lifted code for function 0xf4a2c
+// --------------------------------------------------
+// Function decompilation
+
+struct X509_crl_st * X509_STORE_CTX_get0_current_crl(struct x509_store_ctx_st * ctx) {
+
+  return ctx->current_crl;
+}
+
+// Lifted code for function 0xf4a34
+// --------------------------------------------------
+// Function decompilation
+
+struct x509_store_ctx_st * X509_STORE_CTX_get0_parent_ctx(struct x509_store_ctx_st * ctx) {
+
+  return ctx->parent;
+}
+
+// Lifted code for function 0xf4a3c
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set_cert(struct x509_store_ctx_st * ctx, struct x509_st * x) {
+
+  ctx->cert = x; // 0xf4a3c, STR
+  return;
+}
+
+// Lifted code for function 0xf4a44
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set_chain(struct x509_store_ctx_st * ctx, struct stack_st_X509 * sk) {
+
+  ctx->untrusted = sk; // 0xf4a44, STR
+  return;
+}
+
+// Lifted code for function 0xf4a4c
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set0_crls(struct x509_store_ctx_st * ctx, struct stack_st_X509_CRL * sk) {
+
+  ctx->crls = sk; // 0xf4a4c, STR
+  return;
+}
+
+// Lifted code for function 0xf4a54
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_trusted_stack(struct x509_store_ctx_st * ctx, struct stack_st_X509 * sk) {
+
+  ctx->get_issuer = &(get_issuer_sk); // 0xf4a64, STR
+  ctx->other_ctx = sk; // 0xf4a68, STR
+  return;
+}
+
+// Lifted code for function 0xf4a78
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set_verify_cb(struct x509_store_ctx_st * ctx, int (*verify_cb)(int x1, struct x509_store_ctx_st * x2)) {
+
+  ctx->verify_cb = verify_cb; // 0xf4a78, STR
+  return;
+}
+
+// Lifted code for function 0xf4a80
+// --------------------------------------------------
+// Function decompilation
+
+struct X509_POLICY_TREE_st * X509_STORE_CTX_get0_policy_tree(struct x509_store_ctx_st * ctx) {
+
+  return ctx->tree;
+}
+
+// Lifted code for function 0xf4a88
+// --------------------------------------------------
+// Function decompilation
+
+int X509_STORE_CTX_get_explicit_policy(struct x509_store_ctx_st * ctx) {
+
+  return ctx->explicit_policy;
+}
+
+// Lifted code for function 0xf4a90
+// --------------------------------------------------
+// Function decompilation
+
+struct X509_VERIFY_PARAM_st * X509_STORE_CTX_get0_param(struct x509_store_ctx_st * ctx) {
+
+  return ctx->param;
+}
+
+// Lifted code for function 0xf4a98
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set0_param(struct x509_store_ctx_st * ctx, struct X509_VERIFY_PARAM_st * param) {
+
+  if ((ctx->param != 0)) {
+    X509_VERIFY_PARAM_free(ctx->param); // 0xf4ab4, BL
+  } // if 
+  ctx->param = param; // 0xf4ab8, STR
+  return;
+}
+
+// Lifted code for function 0xf4ae8
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set_time(struct x509_store_ctx_st * ctx, unsigned long flags, long t) {
+
+  X509_VERIFY_PARAM_set_time(ctx->param, t); // 0xf4af0, BL
+  return;
+}
+
+// Lifted code for function 0xf4af4
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set_flags(struct x509_store_ctx_st * ctx, unsigned long flags) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = X509_VERIFY_PARAM_set_flags(ctx->param, flags); // 0xf4af8, BL
+  return;
+}
+
+// Lifted code for function 0xf4afc
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_set_depth(struct x509_store_ctx_st * ctx, int depth) {
+
+  X509_VERIFY_PARAM_set_depth(ctx->param, depth); // 0xf4b00, BL
+  return;
+}
+
+// Lifted code for function 0xf4fbc
+// --------------------------------------------------
+// Function decompilation
+
+void X509_STORE_CTX_free(struct x509_store_ctx_st * ctx) {
+
+  X509_STORE_CTX_cleanup(ctx); // 0xf4fc4, BL
+  CRYPTO_free(ctx); // 0xf4fd0, BL
+  return;
+}
+
+// Lifted code for function 0xf52fc
+// --------------------------------------------------
+// Function decompilation
+
+struct x509_store_ctx_st * X509_STORE_CTX_new(void) {
+  struct x509_store_ctx_st * ctx;
+
+  ctx = CRYPTO_malloc(136, "x509_vfy.c", 1990); // 0xf5320, BL
+  if ((ctx == 0)) {
+    ERR_put_error(11, 142, 65, "x509_vfy.c", 1993); // 0xf535c, BL
+  } else {
+    memset(ctx, 0, 136); // 0xf5334, BL
+  } // if 
+  return ctx;
+}
+
+// Lifted code for function 0xf54dc
+// --------------------------------------------------
+// Function decompilation
+
+int X509_STORE_CTX_set_trust(struct x509_store_ctx_st * ctx, int trust) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = X509_STORE_CTX_purpose_inherit(ctx, 0, 0, trust); // 0xf54e8, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xf54ec
+// --------------------------------------------------
+// Function decompilation
+
+int X509_STORE_CTX_set_purpose(struct x509_store_ctx_st * ctx, int purpose) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = X509_STORE_CTX_purpose_inherit(ctx, 0, purpose, 0); // 0xf54f8, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xf5598
+// --------------------------------------------------
+// Function decompilation
+
+int X509_STORE_CTX_set_ex_data(struct x509_store_ctx_st * ctx, int idx, void * data) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = CRYPTO_set_ex_data(&(ctx->ex_data), idx, data); // 0xf559c, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xf55a0
+// --------------------------------------------------
+// Function decompilation
+
+int X509_STORE_CTX_get_ex_new_index(long argl, void * argp, int (*new_func)(void * parent, void * ptr, struct crypto_ex_data_st * ad, int idx, long argl, void * argp), int (*dup_func)(struct crypto_ex_data_st * to, struct crypto_ex_data_st * from, void * from_d, int idx, long argl, void * argp), void (*free_func)(void * parent, void * ptr, struct crypto_ex_data_st * ad, int idx, long argl, void * argp)) {
+  int rtn_CRYPTO_get_ex_new_index__0;
+
+  rtn_CRYPTO_get_ex_new_index__0 = CRYPTO_get_ex_new_index(5, argl, argp, new_func, dup_func, free_func); // 0xf55cc, BL
+  return rtn_CRYPTO_get_ex_new_index__0;
+}
+
+// Lifted code for function 0xf55d8
+// --------------------------------------------------
+// Function decompilation
+
+int X509_get_pubkey_parameters(struct evp_pkey_st * pkey, struct stack_st_X509 * chain) {
+  int i;
+  int j;
+  int ret;
+  void * rtn_sk_value__0;
+  struct evp_pkey_st * ktmp;
+  int rtn_EVP_PKEY_missing_parameters__0;
+  int rtn_sk_num__0;
+  void * rtn_sk_value__1;
+  struct evp_pkey_st * ktmp2;
+
+  if ((pkey != 0)) {
+    ret = EVP_PKEY_missing_parameters(pkey); // 0xf55f4, BL
+    if ((ret == 0)) {
+      ret = (ret + 1); // 0xf55fc, ADD
+    } // if 
+    if ((ret == 0)) {
+      goto L0xf5670;
+    } // if 
+  } // if 
+  i = 0; // 0xf5604, MOV
+  while (1) {
+    rtn_sk_num__0 = sk_num((struct stack_st *)chain); // 0xf5638, BL
+    if ((i < rtn_sk_num__0)) {
+      rtn_sk_value__0 = sk_value((struct stack_st *)chain, i); // 0xf560c, BL
+      ktmp = X509_get_pubkey((struct x509_st *)rtn_sk_value__0); // 0xf5610, BL
+      if ((ktmp == 0)) {
+        ERR_put_error(11, 110, 108, "x509_vfy.c", 1801); // 0xf5694, BL
+        ret = 0; // 0xf5698, MOV
+        break;
+      } else {
+        rtn_EVP_PKEY_missing_parameters__0 = EVP_PKEY_missing_parameters(ktmp); // 0xf561c, BL
+        if ((rtn_EVP_PKEY_missing_parameters__0 == 0)) {
+          j = (i - 1); // 0xf56a0, SUB
+          if ((i < 1)) {
+            goto L0xf56d4;
+          } // if 
+          while (1) {
+            rtn_sk_value__1 = sk_value((struct stack_st *)chain, j); // 0xf56b0, BL
+            ktmp2 = X509_get_pubkey((struct x509_st *)rtn_sk_value__1); // 0xf56b4, BL
+            EVP_PKEY_copy_parameters(ktmp2, ktmp); // 0xf56c0, BL
+            EVP_PKEY_free(ktmp2); // 0xf56c8, BL
+            j = (j - 1); // 0xf56cc, SUB
+            if ((j < 1)) {
+              break;
+            } // if 
+          }  // loop 
+           L0xf56d4:
+          if ((pkey != 0)) {
+            EVP_PKEY_copy_parameters(pkey, ktmp); // 0xf56e4, BL
+          } // if 
+          EVP_PKEY_free(ktmp); // 0xf56ec, BL
+          ret = 1; // 0xf56f0, MOV
+          break;
+        } else {
+          EVP_PKEY_free(ktmp); // 0xf562c, BL
+          i = (i + 1); // 0xf5630, ADD
+        } // if 
+      } // if 
+    } else {
+      ERR_put_error(11, 110, 107, "x509_vfy.c", 1814); // 0xf5668, BL
+      ret = 0; // 0xf566c, MOV
+      break;
+    } // if 
+  }  // loop 
+   L0xf5670:
+  return ret;
+}
+
+// Lifted code for function 0xf57ac
+// --------------------------------------------------
+// Function decompilation
+
+struct asn1_string_st * X509_time_adj(struct asn1_string_st * s, long offset_sec, long * in_tm) {
+  struct asn1_string_st * ssa_R0_1;
+
+  ssa_R0_1 = X509_time_adj_ex(s, 0, offset_sec, in_tm); // 0xf57b8, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xf57bc
+// --------------------------------------------------
+// Function decompilation
+
+struct asn1_string_st * X509_gmtime_adj(struct asn1_string_st * s, long adj) {
+  struct asn1_string_st * ssa_R0_1;
+
+  ssa_R0_1 = X509_time_adj(s, adj, 0); // 0xf57c0, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xf69ec
+// --------------------------------------------------
+// Function decompilation
+
+int X509_cmp_current_time(struct asn1_string_st * ctm) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = X509_cmp_time(ctm, 0); // 0xf69f0, BL
+  return ssa_R0_1;
+}

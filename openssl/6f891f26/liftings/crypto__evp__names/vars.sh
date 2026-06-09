@@ -1,0 +1,4 @@
+#export FNS_LIFTED="0xc876c 0xc87ac 0xc87ec 0xc882c 0xc88c8 0xc88d0 0xc88d8"
+export FNS_LIFTED="0xc88c8 0xc88d0 0xc88d8"
+export BINARY="binary"
+export ORIGINAL_BINARY="../../shareddata/6f891f26"

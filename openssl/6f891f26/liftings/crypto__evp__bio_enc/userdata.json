@@ -1,0 +1,76 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xcbfc4",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcbfe8",
+			"name": "ctx",
+			"typename": "BIO_ENC_CTX",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xcc200",
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0xcc204"],
+			"name": "LDR-memop-tc"
+		    },
+		    {
+			"action": "disable",
+			"locs": ["0xcc204"],
+			"name": "LDR-load"
+		    },
+		    {
+			"action": "disable",
+			"locs": ["all"],
+			"name": "ADD-c"
+		    }
+		],
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcc204",
+			"name": "ctx",
+			"typename": "BIO_ENC_CTX",
+			"mods": ["ptrto", "cast"]
+		    },
+		    {
+			"iaddr": "0xcc24c",
+			"name": "v_tmp_1",
+			"typename": "void",
+			"mods": ["ptrto"]
+		    },
+		    {
+			"iaddr": "0xcc250",
+			"name": "nn"
+		    },
+		    {
+			"iaddr": "0xcc260",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0xcc30c",
+			"name": "v_tmp_2",
+			"typename": "void",
+			"mods": ["ptrto"]
+		    },
+		    {
+			"iaddr": "0xcc31c",
+			"name": "i"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 56,
+			"name": "n"
+		    }
+		]
+	    }
+	]
+    }
+}
+		

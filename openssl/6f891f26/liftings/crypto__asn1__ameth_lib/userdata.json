@@ -1,0 +1,89 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xe26fc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xe26fc",
+			"name": "aa",
+			"typename": "EVP_PKEY_ASN1_METHOD",
+			"mods": ["ptrto", "cast"]
+		    },
+		    {
+			"iaddr": "0xe2700",
+			"name": "bb",
+			"typename": "EVP_PKEY_ASN1_METHOD",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xe28ec",
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0xe2930"],
+			"name": "ORR-rdef"
+		    }
+		],
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xe2918",
+			"name": "ameth",
+			"typename": "EVP_PKEY_ASN1_METHOD",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xe2a7c",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xe2a94",
+			"name": "ameth",
+			"typename": "EVP_PKEY_ASN1_METHOD",
+			"mods": ["ptrto"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xe2bf0",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0xe2c14"],
+			"rdeflocs": ["0xe2bfc"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"name": "ADD-c",
+			"locs": ["0xe2c14:0xe2bfc"]
+		    }
+		],
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xe2c14",
+			"name": "num",
+			"typename": "int"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xe2c28",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xe2c94",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0xe2cac",
+			"name": "ameth"
+		    }
+		]
+	    }
+	]
+    }
+}

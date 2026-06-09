@@ -1,0 +1,321 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0x11a8d4",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11a8d4",
+			"name": "old_data"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11a91c",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0x11a92c"],
+			"rdeflocs": ["init"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0x11a920"],
+			"name": "SUB-rdef"
+		    }
+		],
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11a920",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11a930",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0x11a940"],
+			"rdeflocs": ["init"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0x11a934"],
+			"name": "SUB-rdef"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11a944",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0x11a954"],
+			"rdeflocs": ["init"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0x11a948"],
+			"name": "SUB-rdef"
+		    }
+		]
+	    },		
+	    {
+		"faddr": "0x11a958",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0x11a968"],
+			"rdeflocs": ["init"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0x11a95c"],
+			"name": "SUB-rdef"
+		    }
+		]
+	    },		
+	    {
+		"faddr": "0x11a96c",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0x11a97c"],
+			"rdeflocs": ["init"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0x11a970"],
+			"name": "SUB-rdef"
+		    }
+		]
+	    },		
+	    {
+		"faddr": "0x11a980",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0x11a990"],
+			"rdeflocs": ["init"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0x11a984"],
+			"name": "SUB-rdef"
+		    }
+		]
+	    },		
+	    {
+		"faddr": "0x11aacc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11ab14",
+			"name": "ret",
+			"typename": "int"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11ae54",
+		"stack-variable-introductions": [
+		    {
+			"offset": 40,
+			"name": "uis"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11aec8",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11aeec",
+			"name": "ui_method",
+			"typename": "UI_METHOD",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11af44",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11af64",
+			"name": "ret"
+		    },
+		    {
+			"iaddr": "0x11af70",
+			"name": "meth"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11af94",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11afc0",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11b1d0",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11b280",
+			"name": "prompt"
+		    },
+		    {
+			"iaddr": "0x11b2ec",
+			"name": "prompt"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 26,
+			"name": "prompt3"
+		    },
+		    {
+			"offset": 32,
+			"name": "prompt2"
+		    },
+		    {
+			"offset": 39,
+			"name": "prompt1"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11b768",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11b790",
+			"name": "ret",
+			"typename": "UI",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11b6e4",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11b714",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11b810",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11b858",
+			"name": "ret",
+			"typename": "UI_STRING",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11b940",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11b960",
+			"name": "text_copy"
+		    },
+		    {
+			"iaddr": "0x11b990",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11b9d0",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11b9f8",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11ba04",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11ba24",
+			"name": "text_copy"
+		    },
+		    {
+			"iaddr": "0x11ba54",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11ba94",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11babc",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11bb64",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11bb90",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11bac8",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11baf0",
+			"name": "prompt_copy"
+		    },
+		    {
+			"iaddr": "0x11bb24",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11bb9c",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11bbc4",
+			"name": "prompt_copy"
+		    },
+		    {
+			"iaddr": "0x11bbfc",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0x11bc44",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0x11bc70",
+			"name": "ret"
+		    }
+		]
+	    }
+	]
+    }
+}

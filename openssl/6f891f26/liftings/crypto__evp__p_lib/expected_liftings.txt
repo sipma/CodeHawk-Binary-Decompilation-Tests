@@ -1,0 +1,138 @@
+
+// Lifted code for function 0xca1d8
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_id(struct evp_pkey_st * pkey) {
+
+  return pkey->type;
+}
+
+// Lifted code for function 0xca360
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_type(int type) {
+  int ssa_R4_1;
+  struct evp_pkey_asn1_method_st * ameth;
+  struct engine_st * ssa_R0_2;
+  struct engine_st * e;
+
+  ameth = EVP_PKEY_asn1_find(&(e), type); // 0xca370, BL
+  if ((ameth == 0)) {
+    ssa_R4_1 = 0; // 0xca378, MOV
+  } else {
+    ssa_R4_1 = ameth->pkey_id; // 0xca37c, LDR
+  } // if 
+  ssa_R0_2 = e; // 0xca380, LDR
+  if ((ssa_R0_2 != 0)) {
+    ENGINE_finish(ssa_R0_2); // 0xca38c, BL
+  } // if 
+  return ssa_R4_1;
+}
+
+// Lifted code for function 0xca39c
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_base_id(struct evp_pkey_st * pkey) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = EVP_PKEY_type(pkey->type); // 0xca3a0, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xca468
+// --------------------------------------------------
+// Function decompilation
+
+struct dh_st * EVP_PKEY_get1_DH(struct evp_pkey_st * pkey) {
+  struct dh_st * ssa_R0_2;
+
+  if ((pkey->type != 28)) {
+    ERR_put_error(6, 119, 128, "p_lib.c", 352); // 0xca4b8, BL
+    ssa_R0_2 = 0; // 0xca4bc, MOV
+  } else {
+    DH_up_ref(pkey->pkey.dh); // 0xca48c, BL
+    ssa_R0_2 = pkey->pkey.dh; // 0xca490, LDR
+  } // if 
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xca7e0
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_set_type_str(struct evp_pkey_st * pkey, char * str, int len) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = pkey_set_type(pkey, 0, str, len); // 0xca7ec, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xca7f0
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_set_type(struct evp_pkey_st * pkey, int type) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = pkey_set_type(pkey, type, 0, -1); // 0xca7f8, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xca82c
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_set1_DH(struct evp_pkey_st * pkey, struct dh_st * key) {
+  int rtn_EVP_PKEY_assign__0;
+
+  rtn_EVP_PKEY_assign__0 = EVP_PKEY_assign(pkey, 28, key); // 0xca840, BL
+  if ((rtn_EVP_PKEY_assign__0 != 0)) {
+    DH_up_ref(key); // 0xca850, BL
+  } // if 
+  return rtn_EVP_PKEY_assign__0;
+}
+
+// Lifted code for function 0xca860
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_set1_EC_KEY(struct evp_pkey_st * pkey, struct ec_key_st * key) {
+  int rtn_EVP_PKEY_assign__0;
+
+  rtn_EVP_PKEY_assign__0 = EVP_PKEY_assign(pkey, 408, key); // 0xca874, BL
+  if ((rtn_EVP_PKEY_assign__0 != 0)) {
+    EC_KEY_up_ref(key); // 0xca884, BL
+  } // if 
+  return rtn_EVP_PKEY_assign__0;
+}
+
+// Lifted code for function 0xca894
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_set1_DSA(struct evp_pkey_st * pkey, struct dsa_st * key) {
+  int rtn_EVP_PKEY_assign__0;
+
+  rtn_EVP_PKEY_assign__0 = EVP_PKEY_assign(pkey, 116, key); // 0xca8a8, BL
+  if ((rtn_EVP_PKEY_assign__0 != 0)) {
+    DSA_up_ref(key); // 0xca8b8, BL
+  } // if 
+  return rtn_EVP_PKEY_assign__0;
+}
+
+// Lifted code for function 0xca8c8
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_set1_RSA(struct evp_pkey_st * pkey, struct rsa_st * key) {
+  int rtn_EVP_PKEY_assign__0;
+
+  rtn_EVP_PKEY_assign__0 = EVP_PKEY_assign(pkey, 6, key); // 0xca8dc, BL
+  if ((rtn_EVP_PKEY_assign__0 != 0)) {
+    RSA_up_ref(key); // 0xca8ec, BL
+  } // if 
+  return rtn_EVP_PKEY_assign__0;
+}

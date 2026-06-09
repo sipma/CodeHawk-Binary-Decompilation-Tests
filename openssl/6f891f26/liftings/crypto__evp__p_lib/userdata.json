@@ -1,0 +1,43 @@
+{
+   "userdata": {
+      "function-annotations": [
+         {
+            "faddr": "0xca360",
+            "register-variable-introductions": [
+               {
+                  "iaddr": "0xca370",
+                  "name": "ameth"
+               }
+            ],
+            "stack-variable-introductions": [
+               {
+                  "offset": 12,
+                  "name": "e",
+                  "typename": "ENGINE",
+                  "mods": ["ptrto", "cast"]
+               }
+            ]
+         },
+         {
+            "faddr": "0xca5fc",
+            "register-variable-introductions": [
+               {
+                  "iaddr": "0xca620",
+                  "name": "ret",
+                  "typename": "EVP_PKEY",
+                  "mods": ["ptrto", "cast"]
+               }
+            ]
+         },
+         {
+            "faddr": "0xca7fc",
+            "register-variable-introductions": [
+               {
+                  "iaddr": "0xca80c",
+                  "name": "ret"
+               }
+            ]
+         }
+      ]
+   }
+}

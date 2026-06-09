@@ -1,0 +1,54 @@
+
+// Lifted code for function 0xf3504
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_get_default_private_dir(void) {
+
+  return "/usr/local/ssl/private";
+}
+
+// Lifted code for function 0xf3520
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_get_default_cert_area(void) {
+
+  return "/usr/local/ssl";
+}
+
+// Lifted code for function 0xf353c
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_get_default_cert_dir(void) {
+
+  return "/usr/local/ssl/certs";
+}
+
+// Lifted code for function 0xf3558
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_get_default_cert_file(void) {
+
+  return "/usr/local/ssl/cert.pem";
+}
+
+// Lifted code for function 0xf3574
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_get_default_cert_dir_env(void) {
+
+  return "SSL_CERT_DIR";
+}
+
+// Lifted code for function 0xf3590
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_get_default_cert_file_env(void) {
+
+  return "SSL_CERT_FILE";
+}

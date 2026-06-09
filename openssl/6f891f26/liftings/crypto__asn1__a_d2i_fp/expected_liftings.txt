@@ -1,0 +1,76 @@
+
+// Lifted code for function 0xd46bc
+// --------------------------------------------------
+// Function decompilation
+
+void * ASN1_item_d2i_bio(struct ASN1_ITEM_st * it, struct bio_st * in, void * x) {
+  struct ASN1_VALUE_st * ret;
+  int len;
+  struct ASN1_VALUE_st * rtn_ASN1_item_d2i__0;
+  char * p;
+  struct buf_mem_st * b;
+
+  b = 0; // 0xd46cc, STR
+  ret = x; // 0xd46dc, MOV
+  len = asn1_d2i_read_bio(in, &(b)); // 0xd46e0, BL
+  if ((len < 0)) {
+    ret = 0; // 0xd46e8, MOV
+  } // if 
+  if ((len >= 0)) {
+    p = b->data; // 0xd4700, STR
+    rtn_ASN1_item_d2i__0 = ASN1_item_d2i((struct ASN1_VALUE_st * *)ret, (unsigned char * *)&(p), (long)len, it); // 0xd4710, BL
+    ret = rtn_ASN1_item_d2i__0; // 0xd4714, MOV
+  } // if 
+  if ((b != 0)) {
+    BUF_MEM_free(b); // 0xd4724, BL
+  } // if 
+  return ret;
+}
+
+// Lifted code for function 0xd4734
+// --------------------------------------------------
+// Function decompilation
+
+void * ASN1_item_d2i_fp(struct ASN1_ITEM_st * it, struct _IO_FILE * in, void * x) {
+  struct bio_method_st * rtn_BIO_s_file__0;
+  struct bio_st * b;
+  unsigned char * ret;
+  unsigned char * ssa_R0_3;
+
+  rtn_BIO_s_file__0 = BIO_s_file(); // 0xd4748, BL
+  b = BIO_new(rtn_BIO_s_file__0); // 0xd474c, BL
+  if ((b == 0)) {
+    ERR_put_error(13, 206, 7, "a_d2i_fp.c", 131); // 0xd47b4, BL
+    ssa_R0_3 = 0; // 0xd47b8, MOV
+  } else {
+    BIO_ctrl(b, 106, 0, in); // 0xd476c, BL
+    ret = ASN1_item_d2i_bio(it, b, x); // 0xd477c, BL
+    BIO_free(b); // 0xd4788, BL
+    ssa_R0_3 = ret; // 0xd478c, MOV
+  } // if 
+  return ssa_R0_3;
+}
+
+// Lifted code for function 0xd483c
+// --------------------------------------------------
+// Function decompilation
+
+void * ASN1_d2i_fp(void * (*xnew)(void), void * (*d2i)(void * * x1, unsigned char * * x2, long x3), struct _IO_FILE * in, void * * x) {
+  unsigned char * ssa_R4_2;
+  struct bio_method_st * rtn_BIO_s_file__0;
+  struct bio_st * b;
+  unsigned char * ret;
+
+  rtn_BIO_s_file__0 = BIO_s_file(); // 0xd4854, BL
+  b = BIO_new(rtn_BIO_s_file__0); // 0xd4858, BL
+  if ((b == 0)) {
+    ssa_R4_2 = 0; // 0xd48c4, MOV
+    ERR_put_error(13, 109, 7, "a_d2i_fp.c", 77); // 0xd48c8, BL
+  } else {
+    BIO_ctrl(b, 106, 0, in); // 0xd4878, BL
+    ret = ASN1_d2i_bio(xnew, d2i, b, x); // 0xd488c, BL
+    ssa_R4_2 = ret; // 0xd4890, MOV
+    BIO_free(b); // 0xd4898, BL
+  } // if 
+  return ssa_R4_2;
+}

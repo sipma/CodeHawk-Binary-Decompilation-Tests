@@ -1,0 +1,244 @@
+
+// Lifted code for function 0xcce20
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_block_size(struct evp_cipher_st * e) {
+
+  return e->block_size;
+}
+
+// Lifted code for function 0xcce28
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_CTX_block_size(struct evp_cipher_ctx_st * ctx) {
+
+  return ctx->cipher->block_size;
+}
+
+// Lifted code for function 0xcce50
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_cipher_st * EVP_CIPHER_CTX_cipher(struct evp_cipher_ctx_st * ctx) {
+
+  return ctx->cipher;
+}
+
+// Lifted code for function 0xcce58
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long EVP_CIPHER_flags(struct evp_cipher_st * cipher) {
+
+  return cipher->flags;
+}
+
+// Lifted code for function 0xcce60
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long EVP_CIPHER_CTX_flags(struct evp_cipher_ctx_st * ctx) {
+
+  return ctx->cipher->flags;
+}
+
+// Lifted code for function 0xcce6c
+// --------------------------------------------------
+// Function decompilation
+
+void * EVP_CIPHER_CTX_get_app_data(struct evp_cipher_ctx_st * ctx) {
+
+  return ctx->app_data;
+}
+
+// Lifted code for function 0xcce74
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_CIPHER_CTX_set_app_data(struct evp_cipher_ctx_st * ctx, void * data) {
+
+  ctx->app_data = data; // 0xcce74, STR
+  return;
+}
+
+// Lifted code for function 0xcce7c
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_iv_length(struct evp_cipher_st * cipher) {
+
+  return cipher->iv_len;
+}
+
+// Lifted code for function 0xcce84
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_CTX_iv_length(struct evp_cipher_ctx_st * ctx) {
+
+  return ctx->cipher->iv_len;
+}
+
+// Lifted code for function 0xcce90
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_key_length(struct evp_cipher_st * cipher) {
+
+  return cipher->key_len;
+}
+
+// Lifted code for function 0xcce98
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_CTX_key_length(struct evp_cipher_ctx_st * ctx) {
+
+  return ctx->key_len;
+}
+
+// Lifted code for function 0xccea0
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_nid(struct evp_cipher_st * cipher) {
+
+  return cipher->nid;
+}
+
+// Lifted code for function 0xccea8
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_CTX_nid(struct evp_cipher_ctx_st * ctx) {
+
+  return ctx->cipher->nid;
+}
+
+// Lifted code for function 0xcceb4
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_MD_block_size(struct env_md_st * md) {
+
+  return md->block_size;
+}
+
+// Lifted code for function 0xccebc
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_MD_type(struct env_md_st * md) {
+
+  return md->type;
+}
+
+// Lifted code for function 0xccec4
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_MD_pkey_type(struct env_md_st * md) {
+
+  return md->pkey_type;
+}
+
+// Lifted code for function 0xccecc
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long EVP_MD_flags(struct env_md_st * md) {
+
+  return md->flags;
+}
+
+// Lifted code for function 0xccee0
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_MD_CTX_set_flags(struct env_md_ctx_st * ctx, int flags) {
+  unsigned int ssa_R3_1;
+
+  ssa_R3_1 = (ctx->flags | flags); // 0xccee4, ORR
+  ctx->flags = ssa_R3_1; // 0xccee8, STR
+  return;
+}
+
+// Lifted code for function 0xccef0
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_MD_CTX_clear_flags(struct env_md_ctx_st * ctx, int flags) {
+  int ssa_R1_1;
+  unsigned int ssa_R3_1;
+
+  ssa_R1_1 = ~flags; // 0xccef4, MVN
+  ssa_R3_1 = (ctx->flags & ssa_R1_1); // 0xccef8, AND
+  ctx->flags = ssa_R3_1; // 0xccefc, STR
+  return;
+}
+
+// Lifted code for function 0xccf04
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_MD_CTX_test_flags(struct env_md_ctx_st * ctx, int flags) {
+
+  return (flags & ctx->flags);
+}
+
+// Lifted code for function 0xccf10
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_CIPHER_CTX_set_flags(struct evp_cipher_ctx_st * ctx, int flags) {
+  unsigned int ssa_R3_1;
+
+  ssa_R3_1 = (ctx->flags | flags); // 0xccf14, ORR
+  ctx->flags = ssa_R3_1; // 0xccf18, STR
+  return;
+}
+
+// Lifted code for function 0xccf20
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_CIPHER_CTX_clear_flags(struct evp_cipher_ctx_st * ctx, int flags) {
+  int ssa_R1_1;
+  unsigned int ssa_R3_1;
+
+  ssa_R1_1 = ~flags; // 0xccf24, MVN
+  ssa_R3_1 = (ctx->flags & ssa_R1_1); // 0xccf28, AND
+  ctx->flags = ssa_R3_1; // 0xccf2c, STR
+  return;
+}
+
+// Lifted code for function 0xccf34
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_CTX_test_flags(struct evp_cipher_ctx_st * ctx, int flags) {
+
+  return (flags & ctx->flags);
+}
+
+// Lifted code for function 0xcd0f4
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_CIPHER_set_asn1_iv(struct evp_cipher_ctx_st * c, struct asn1_type_st * type) {
+  int j;
+  int i;
+
+  if ((type == 0)) {
+    return 0;
+  } else {
+    j = EVP_CIPHER_CTX_iv_length(c); // 0xcd110, BL
+    if (((j > 16) || (j < 0))) {
+      OpenSSLDie("evp_lib.c", 116, "j <= sizeof(c->iv)"); // 0xcd158, BL
+    } // if 
+    i = ASN1_TYPE_set_octetstring(type, c->oiv, j); // 0xcd134, BL
+    return i;
+  } // if 
+}

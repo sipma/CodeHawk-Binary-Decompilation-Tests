@@ -1,0 +1,26 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xd611c",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd611c",
+			"name": "p",
+			"typename": "ppchar"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd61e0",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd61e4",
+			"name": "types",
+			"typename": "unsigned long"
+		    }
+		]
+	    }
+	]
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xd4b98",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0xd4bc8"],
+			"rdeflocs": ["0xd4bdc"]
+		    },
+                    {
+                       "var": "R0",
+                       "uselocs": ["0xd4c00"],
+                       "rdeflocs": ["0xd4bf0"]
+                    }
+		],
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd4bb0",
+			"name": "neg",
+			"typename": "int"
+		    },
+		    {
+			"iaddr": "0xd4bec",
+			"name": "rr",
+			"typename": "long"
+		    },
+		    {
+			"iaddr": "0xd4bf8",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0xd4bfc",
+			"name": "r",
+			"typename": "long"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd4c30",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd4c48",
+			"name": "ret"
+		    }
+		]
+	    }
+	]
+    }
+}

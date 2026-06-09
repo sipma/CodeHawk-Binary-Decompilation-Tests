@@ -1,0 +1,80 @@
+
+// Lifted code for function 0xd1e2c
+// --------------------------------------------------
+// Function decompilation
+
+int ASN1_BIT_STRING_get_bit(struct asn1_string_st * a, int n) {
+  int ssa_R3_0;
+  char ssa_R3_2;
+  int ssa_R2_1;
+  int ssa_R2_2;
+
+  if ((a != 0)) {
+    ssa_R3_0 = (n + 7); // 0xd1e3c, ADD
+    if ((n >= 0)) {
+      ssa_R3_0 = n; // 0xd1e40, MOV
+    } // if 
+    if (((ssa_R3_0 / 8) < a->length)) {
+      if ((a->data != 0)) {
+        ssa_R3_2 = a->data[(ssa_R3_0 / 8)]; // 0xd1e5c, LDRB
+        ssa_R2_1 = ~n; // 0xd1e60, MVN
+        ssa_R2_2 = (ssa_R2_1 & 7); // 0xd1e64, AND
+        return ((ssa_R3_2 & (1 << (ssa_R2_2 & 7))) != 0);
+      } // if 
+    } // if 
+  } // if 
+  return 0;
+}
+
+// Lifted code for function 0xd1e84
+// --------------------------------------------------
+// Function decompilation
+
+int ASN1_BIT_STRING_check(struct asn1_string_st * a, unsigned char * flags, int flags_len) {
+  int ok;
+  short ssa_R2_1;
+  int i;
+  int ssa_R3_0;
+
+  if ((a != 0)) {
+    if ((a->data != 0)) {
+      if ((a->length > 0)) {
+        i = 0; // 0xd1eb0, MOV
+        while (1) {
+          if ((flags_len > i)) {
+            ssa_R3_0 = flags[i]; // 0xd1eb8, LDRB
+            ssa_R3_0 = ~ssa_R3_0; // 0xd1ec0, MVN
+            ssa_R2_1 = (ssa_R3_0 & 255); // 0xd1ec4, AND
+          } else {
+            ssa_R2_1 = 255; // 0xd1ebc, MOV
+          } // if 
+          ssa_R3_0 = a->data[i]; // 0xd1ec8, LDRB
+          i = (i + 1); // 0xd1ecc, ADD
+          ok = ((ssa_R2_1 & ssa_R3_0) == 0); // 0xd1ed8, MOV (predicate assign)
+          if ((i >= a->length)) {
+            ssa_R3_0 = 0; // 0xd1ee0, MOV
+          } else {
+            ssa_R3_0 = (ok & 1); // 0xd1ee4, AND
+          } // if 
+          if ((ssa_R3_0 == 0)) {
+            goto L0xd1ef0;
+          } // if 
+        }  // loop 
+      } // if 
+    } // if 
+  } // if 
+  ok = 1; // 0xd1ef8, MOV
+   L0xd1ef0:
+  return ok;
+}
+
+// Lifted code for function 0xd22fc
+// --------------------------------------------------
+// Function decompilation
+
+int ASN1_BIT_STRING_set(struct asn1_string_st * x, unsigned char * d, int len) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = ASN1_STRING_set(x, d, len); // 0xd22fc, BL
+  return ssa_R0_1;
+}

@@ -1,0 +1,103 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xc876c",
+		"stack-variable-introductions": [
+		    {
+			"offset": 16,
+			"name": "dc",
+			"typename": "doall_md_st",
+			"mods": ["cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xc87ac",
+		"stack-variable-introductions": [
+		    {
+			"offset": 16,
+			"name": "dc",
+			"typename": "doall_cipher_st",
+			"mods": ["cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xc87ec",
+		"stack-variable-introductions": [
+		    {
+			"offset": 16,
+			"name": "dc",
+			"typename": "doall_md_st",
+			"mods": ["cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xc882c",
+		"stack-variable-introductions": [
+		    {
+			"offset": 16,
+			"name": "dc",
+			"typename": "doall_cipher_st",
+			"mods": ["cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xc88d8",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xc88ec",
+			"name": "name"
+		    },
+		    {
+			"iaddr": "0xc88fc",
+			"name": "r"
+		    },
+		    {
+			"iaddr": "0xc8950",
+			"name": "r"
+		    },
+		    {
+			"iaddr": "0xc895c",
+			"name": "r"
+		    },
+		    {
+			"iaddr": "0xc8974",
+			"name": "r"
+		    },
+		    {
+			"iaddr": "0xc8988",
+			"name": "r"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xc8990",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xc89a8",
+			"name": "objname"
+		    },
+		    {
+			"iaddr": "0xc89b4",
+			"name": "r"
+		    },
+		    {
+			"iaddr": "0xc89cc",
+			"name": "objname"
+		    },
+		    {
+			"iaddr": "0xc89dc",
+			"name": "r"
+		    }
+		]
+	    }
+	],
+	"symbolic-addresses": {
+	    "0x16f528": "object_cleanup_defer"
+	}
+    }
+}

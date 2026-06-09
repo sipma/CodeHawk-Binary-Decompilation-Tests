@@ -1,0 +1,40 @@
+{
+    "userdata": {
+	"function-names": {
+	    "0x3a748": "memcpy",
+	    "0x3a82c": "strlen",
+	    "0x3a88c": "strncasecmp",
+	    "0x3a8f8": "time",
+	    "0x3a9dc": "memset",
+	    "0x3aa9c": "strcmp",
+	    "0x3aae4": "strchr",
+	    "0xadbd8": "ENGINE_free",
+	    "0xae5d4": "ENGINE_init",
+	    "0xae744": "ENGINE_finish"
+	},
+	"symbolic-addresses": {
+	    "0x1692c0": "X509_CINF_local_it",
+	    "0x16f344": "ASN1_PRINTABLESTRING_local_it",
+	    "0x16f3a8": "ASN1_PRINTABLE_local_it",
+	    "0x16f3e4": "ASN1_GENERALIZEDTIME_local_it",
+	    "0x16f424": "ASN1_VISIBLESTRING_local_it",
+	    "0x16f44c": "ASN1_NULL_local_it",
+	    "0x16f460": "ASN1_BMPSTRING_local_it",
+	    "0x16f4c4": "ASN1_INTEGER_local_it",
+	    "0x16f524": "DISPLAYTEXT_local_it",
+	    "0x16f540": "ASN1_OCTET_STRING_local_it",
+	    "0x16f550": "ASN1_IA5STRING_local_it",
+	    "0x16f57c": "ASN1_SEQUENCE_ANY_local_it",
+	    "0x16f70c": "ASN1_T61STRING_local_it",
+	    "0x16f710": "ASN1_UNIVERSALSTRING_local_it",
+	    "0x16f914": "DIRECTORYSTRING_local_it",
+	    "0x16f738": "ASN1_ENUMERATED_local_it",
+	    "0x16f740": "ASN1_GENERALSTRING_local_it",
+	    "0x16f774": "ASN1_BIT_STRING_local_it",
+	    "0x16f7c0": "ASN1_SET_ANY_local_it",
+	    "0x16f7c8": "ASN1_UTCTIME_local_it",
+	    "0x16f7e4": "ASN1_UTF8STRING_local_it",
+	    "0x16f7f0": "ASN1_local_it"
+	}
+    }
+}

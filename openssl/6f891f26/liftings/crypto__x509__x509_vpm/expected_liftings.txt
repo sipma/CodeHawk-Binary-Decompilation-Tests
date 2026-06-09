@@ -1,0 +1,156 @@
+
+// Lifted code for function 0xfd43c
+// --------------------------------------------------
+// Function decompilation
+
+int X509_VERIFY_PARAM_set_flags(struct X509_VERIFY_PARAM_st * param, unsigned long flags) {
+  unsigned int ssa_R1_1;
+  unsigned int ssa_R3_0;
+
+  ssa_R3_0 = param->flags; // 0xfd43c, LDR
+  ssa_R1_1 = (flags | param->flags); // 0xfd444, ORR
+  if (((flags & 1920) != 0)) {
+    ssa_R3_0 = (ssa_R1_1 | 128); // 0xfd448, ORR
+  } // if 
+  param->flags = ssa_R1_1; // 0xfd44c, STR
+  if (((flags & 1920) != 0)) {
+    param->flags = ssa_R3_0; // 0xfd450, STR
+  } // if 
+  return 1;
+}
+
+// Lifted code for function 0xfd45c
+// --------------------------------------------------
+// Function decompilation
+
+int X509_VERIFY_PARAM_clear_flags(struct X509_VERIFY_PARAM_st * param, unsigned long flags) {
+  unsigned int ssa_R1_1;
+  unsigned int ssa_R3_1;
+
+  ssa_R1_1 = ~flags; // 0xfd460, MVN
+  ssa_R3_1 = (param->flags & ssa_R1_1); // 0xfd464, AND
+  param->flags = ssa_R3_1; // 0xfd468, STR
+  return 1;
+}
+
+// Lifted code for function 0xfd474
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long X509_VERIFY_PARAM_get_flags(struct X509_VERIFY_PARAM_st * param) {
+
+  return param->flags;
+}
+
+// Lifted code for function 0xfd47c
+// --------------------------------------------------
+// Function decompilation
+
+void X509_VERIFY_PARAM_set_depth(struct X509_VERIFY_PARAM_st * param, int depth) {
+
+  param->depth = depth; // 0xfd47c, STR
+  return;
+}
+
+// Lifted code for function 0xfd484
+// --------------------------------------------------
+// Function decompilation
+
+void X509_VERIFY_PARAM_set_time(struct X509_VERIFY_PARAM_st * param, long t) {
+  unsigned int ssa_R3_1;
+
+  param->check_time = t; // 0xfd488, STR
+  ssa_R3_1 = (param->flags | 2); // 0xfd48c, ORR
+  param->flags = ssa_R3_1; // 0xfd490, STR
+  return;
+}
+
+// Lifted code for function 0xfd498
+// --------------------------------------------------
+// Function decompilation
+
+int X509_VERIFY_PARAM_get_depth(struct X509_VERIFY_PARAM_st * param) {
+
+  return param->depth;
+}
+
+// Lifted code for function 0xfd578
+// --------------------------------------------------
+// Function decompilation
+
+int table_cmp_BSEARCH_CMP_FN(struct X509_VERIFY_PARAM_st * * a_, struct X509_VERIFY_PARAM_st * * b_) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = strcmp((char *)(*(a_)), (char *)(*(b_))); // 0xfd580, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xfd584
+// --------------------------------------------------
+// Function decompilation
+
+int param_cmp(struct X509_VERIFY_PARAM_st * * a, struct X509_VERIFY_PARAM_st * * b) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = strcmp((*(a))->name, (*(b))->name); // 0xfd594, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xfd814
+// --------------------------------------------------
+// Function decompilation
+
+int X509_VERIFY_PARAM_set1(struct X509_VERIFY_PARAM_st * to, struct X509_VERIFY_PARAM_st * from) {
+  unsigned int save_flags;
+  int ret;
+  unsigned int ssa_R3_0;
+
+  save_flags = (unsigned int)to->inh_flags; // 0xfd818, LDR
+  ssa_R3_0 = (save_flags | 1); // 0xfd820, ORR
+  to->inh_flags = ssa_R3_0; // 0xfd828, STR
+  ret = X509_VERIFY_PARAM_inherit(to, from); // 0xfd82c, BL
+  to->inh_flags = save_flags; // 0xfd830, STR
+  return ret;
+}
+
+// Lifted code for function 0xfd83c
+// --------------------------------------------------
+// Function decompilation
+
+int X509_VERIFY_PARAM_set_trust(struct X509_VERIFY_PARAM_st * param, int trust) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = X509_TRUST_set(&(param->trust), trust); // 0xfd840, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xfd844
+// --------------------------------------------------
+// Function decompilation
+
+int X509_VERIFY_PARAM_set_purpose(struct X509_VERIFY_PARAM_st * param, int purpose) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = X509_PURPOSE_set(&(param->purpose), purpose); // 0xfd848, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xfd950
+// --------------------------------------------------
+// Function decompilation
+
+int X509_VERIFY_PARAM_set1_name(struct X509_VERIFY_PARAM_st * param, char * name) {
+  char * rtn_BUF_strdup__0;
+  int ssa_R0_3;
+
+  if ((param->name != 0)) {
+    CRYPTO_free(param->name); // 0xfd96c, BL
+  } // if 
+  rtn_BUF_strdup__0 = BUF_strdup(name); // 0xfd974, BL
+  param->name = rtn_BUF_strdup__0; // 0xfd978, STR
+  ssa_R0_3 = rtn_BUF_strdup__0; // 0xfd97c, SUB
+  if ((rtn_BUF_strdup__0 != 0)) {
+    ssa_R0_3 = 1; // 0xfd980, MOV
+  } // if 
+  return ssa_R0_3;
+}

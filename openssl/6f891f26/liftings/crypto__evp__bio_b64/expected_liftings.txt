@@ -1,0 +1,22 @@
+
+// Lifted code for function 0xcae58
+// --------------------------------------------------
+// Function decompilation
+
+struct bio_method_st * BIO_f_base64(void) {
+
+  return &(methods_b64);
+}
+
+// Lifted code for function 0xcbe78
+// --------------------------------------------------
+// Function decompilation
+
+int b64_puts(struct bio_st * b, char * str) {
+  unsigned int rtn_strlen__0;
+  int ret;
+
+  rtn_strlen__0 = strlen(str); // 0xcbe8c, BL
+  ret = b64_write(b, str, (int)rtn_strlen__0); // 0xcbea4, BL
+  return ret;
+}

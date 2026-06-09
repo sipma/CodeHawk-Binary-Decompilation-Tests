@@ -1,0 +1,45 @@
+
+// Lifted code for function 0xd2c64
+// --------------------------------------------------
+// Function decompilation
+
+struct asn1_string_st * ASN1_GENERALIZEDTIME_set(struct asn1_string_st * s, long t) {
+  struct asn1_string_st * ssa_R0_1;
+
+  ssa_R0_1 = ASN1_GENERALIZEDTIME_adj(s, t, 0, 0); // 0xd2c6c, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xd2c70
+// --------------------------------------------------
+// Function decompilation
+
+int ASN1_GENERALIZEDTIME_set_string(struct asn1_string_st * s, char * str) {
+  unsigned int rtn_strlen__0;
+  int rtn_ASN1_GENERALIZEDTIME_check__0;
+  int rtn_ASN1_STRING_set__0;
+  int ssa_R0_4;
+  struct asn1_string_st t;
+
+  t.type = 24; // 0xd2c80, STR
+  rtn_strlen__0 = strlen(str); // 0xd2c8c, BL
+  t.data = str; // 0xd2c90, STR
+  t.length = rtn_strlen__0; // 0xd2c94, STR
+  rtn_ASN1_GENERALIZEDTIME_check__0 = ASN1_GENERALIZEDTIME_check(&(t)); // 0xd2c9c, BL
+  if ((rtn_ASN1_GENERALIZEDTIME_check__0 != 0)) {
+    if ((s != 0)) {
+      rtn_ASN1_STRING_set__0 = ASN1_STRING_set(s, str, (int)rtn_strlen__0); // 0xd2cbc, BL
+      if ((rtn_ASN1_STRING_set__0 == 0)) {
+        goto L0xd2cd4;
+      } else {
+        s->type = 24; // 0xd2cc8, STR
+      } // if 
+    } // if 
+    ssa_R0_4 = 1; // 0xd2ccc, MOV
+    goto L0xd2cd8;
+  } // if 
+   L0xd2cd4:
+  ssa_R0_4 = 0; // 0xd2cd4, MOV
+   L0xd2cd8:
+  return ssa_R0_4;
+}

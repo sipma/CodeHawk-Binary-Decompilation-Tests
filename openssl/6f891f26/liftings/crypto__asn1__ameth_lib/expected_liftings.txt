@@ -1,0 +1,20 @@
+
+// Lifted code for function 0xe2898
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_asn1_set_free(struct evp_pkey_asn1_method_st * ameth, void (*pkey_free)(struct evp_pkey_st * pkey)) {
+
+  ameth->pkey_free = pkey_free; // 0xe2898, STR
+  return;
+}
+
+// Lifted code for function 0xe28a0
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_asn1_set_ctrl(struct evp_pkey_asn1_method_st * ameth, int (*pkey_ctrl)(struct evp_pkey_st * pkey, int op, long arg1, void * arg2)) {
+
+  ameth->pkey_ctrl = pkey_ctrl; // 0xe28a0, STR
+  return;
+}

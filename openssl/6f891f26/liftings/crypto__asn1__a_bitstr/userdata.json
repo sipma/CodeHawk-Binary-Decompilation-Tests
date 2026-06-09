@@ -1,0 +1,19 @@
+{
+  "userdata": {
+    "function-annotations": [
+      {
+        "faddr": "0xd1e84",
+        "register-variable-introductions": [
+          {
+            "iaddr": "0xd1eb0",
+            "name": "i"
+          },
+          {
+            "iaddr": "0xd1ed8",
+            "name": "ok"
+          }
+        ]
+      }
+    ]
+  }
+}

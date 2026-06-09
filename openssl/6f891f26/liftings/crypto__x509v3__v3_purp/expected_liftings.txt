@@ -1,0 +1,83 @@
+
+// Lifted code for function 0x106188
+// --------------------------------------------------
+// Function decompilation
+
+int xp_cmp(struct x509_purpose_st * * a, struct x509_purpose_st * * b) {
+
+  return ((*(a))->purpose - (*(b))->purpose);
+}
+
+// Lifted code for function 0x1061a0
+// --------------------------------------------------
+// Function decompilation
+
+int X509_PURPOSE_get_id(struct x509_purpose_st * xp) {
+
+  return xp->purpose;
+}
+
+// Lifted code for function 0x1061a8
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_PURPOSE_get0_name(struct x509_purpose_st * xp) {
+
+  return xp->name;
+}
+
+// Lifted code for function 0x1061b0
+// --------------------------------------------------
+// Function decompilation
+
+char * X509_PURPOSE_get0_sname(struct x509_purpose_st * xp) {
+
+  return xp->sname;
+}
+
+// Lifted code for function 0x1061b8
+// --------------------------------------------------
+// Function decompilation
+
+int X509_PURPOSE_get_trust(struct x509_purpose_st * xp) {
+
+  return xp->trust;
+}
+
+// Lifted code for function 0x1061d0
+// --------------------------------------------------
+// Function decompilation
+
+int no_check(struct x509_purpose_st * xp, struct x509_st * x, int ca) {
+
+  return 1;
+}
+
+// Lifted code for function 0x106dbc
+// --------------------------------------------------
+// Function decompilation
+
+int X509_PURPOSE_get_by_sname(char * sname) {
+  int i;
+  struct x509_purpose_st * xptmp;
+  int rtn_strcmp__0;
+  int count;
+
+  i = 0; // 0x106dc8, MOV
+  while (1) {
+    count = X509_PURPOSE_get_count(); // 0x106dec, BL
+    if ((i < count)) {
+      xptmp = X509_PURPOSE_get0(i); // 0x106dd0, BL
+      rtn_strcmp__0 = strcmp(xptmp->sname, sname); // 0x106ddc, BL
+      if ((rtn_strcmp__0 == 0)) {
+        break;
+      } else {
+        i = (i + 1); // 0x106de8, ADD
+      } // if 
+    } else {
+      i = -1; // 0x106dfc, MVN
+      break;
+    } // if 
+  }  // loop 
+  return i;
+}

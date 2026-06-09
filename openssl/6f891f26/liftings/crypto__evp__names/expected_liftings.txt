@@ -1,0 +1,56 @@
+
+// Lifted code for function 0xc88c8
+// --------------------------------------------------
+// Function decompilation
+
+struct env_md_st * EVP_get_digestbyname(char * name) {
+  char * ssa_R0_1;
+
+  ssa_R0_1 = OBJ_NAME_get(name, 1); // 0xc88cc, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xc88d0
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_cipher_st * EVP_get_cipherbyname(char * name) {
+  char * ssa_R0_1;
+
+  ssa_R0_1 = OBJ_NAME_get(name, 2); // 0xc88d4, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xc88d8
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_add_digest(struct env_md_st * md) {
+  char * name;
+  int r;
+  char * rtn_OBJ_nid2ln__0;
+
+  OPENSSL_init(); // 0xc88e4, BL
+  name = OBJ_nid2sn(md->type); // 0xc88ec, BL
+  r = OBJ_NAME_add(name, 1, (char *)md); // 0xc88fc, BL
+  if ((r != 0)) {
+    check_defer(md->type); // 0xc8914, BL
+    rtn_OBJ_nid2ln__0 = OBJ_nid2ln(md->type); // 0xc891c, BL
+    r = OBJ_NAME_add(rtn_OBJ_nid2ln__0, 1, (char *)md); // 0xc8928, BL
+    if ((r != 0)) {
+      if ((md->pkey_type != 0)) {
+        if ((md->pkey_type != md->type)) {
+          r = OBJ_nid2sn(md->pkey_type); // 0xc8950, BL
+          r = OBJ_NAME_add((char *)r, 0x8001, name); // 0xc895c, BL
+          if ((r != 0)) {
+            check_defer(md->pkey_type); // 0xc896c, BL
+            r = OBJ_nid2ln(md->pkey_type); // 0xc8974, BL
+            r = OBJ_NAME_add((char *)r, 0x8001, name); // 0xc8988, BL
+            return r;
+          } // if 
+        } // if 
+      } // if 
+    } // if 
+  } // if 
+  return r;
+}

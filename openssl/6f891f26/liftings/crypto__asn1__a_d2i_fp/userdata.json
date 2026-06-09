@@ -1,0 +1,92 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xd46bc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd46e0",
+			"name": "len"
+		    },
+		    {
+			"iaddr": "0xd46dc",
+			"name": "ret",
+			"typename": "VOID",
+			"mods": ["ptrto", "cast"]
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 20,
+			"name": "b",
+			"typename": "BUF_MEM",
+			"mods": ["ptrto"]
+		    },
+		    {
+			"offset": 24,
+			"name": "p",
+			"typename": "char",
+			"mods": ["ptrto"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd4734",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd474c",
+			"name": "b",
+			"typename": "BIO",
+			"mods": ["ptrto", "cast"]
+		    },
+		    {
+			"iaddr": "0xd477c",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd47c8",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd4818",
+			"name": "ret",
+			"typename": "void",
+			"mods": ["ptrto"]
+		    },
+		    {
+			"iaddr": "0xd47ec",
+			"name": "len"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 20,
+			"name": "b"
+		    },
+		    {
+			"offset": 24,
+			"name": "p",
+			"typename": "unsigned char",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd483c",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd4858",
+			"name": "b",
+			"typename": "BIO",
+			"mods": ["ptrto"]
+		    },
+		    {
+			"iaddr": "0xd488c",
+			"name": "ret"
+		    }
+		]
+	    }
+	]
+    }
+}

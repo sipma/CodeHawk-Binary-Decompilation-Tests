@@ -1,0 +1,353 @@
+
+// Lifted code for function 0xcf130
+// --------------------------------------------------
+// Function decompilation
+
+int pmeth_cmp(struct evp_pkey_method_st * * a, struct evp_pkey_method_st * * b) {
+
+  return ((*(a))->pkey_id - (*(b))->pkey_id);
+}
+
+// Lifted code for function 0xcf160
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_get0_info(int * ppkey_id, int * pflags, struct evp_pkey_method_st * meth) {
+  int ssa_R3_0;
+
+  if ((ppkey_id != 0)) {
+    ssa_R3_0 = meth->pkey_id; // 0xcf164, LDR
+    (*(ppkey_id)) = ssa_R3_0; // 0xcf168, STR
+  } // if 
+  if ((pflags != 0)) {
+    ssa_R3_0 = meth->flags; // 0xcf170, LDR
+    (*(pflags)) = ssa_R3_0; // 0xcf174, STR
+  } // if 
+  return;
+}
+
+// Lifted code for function 0xcf17c
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_copy(struct evp_pkey_method_st * dst, struct evp_pkey_method_st * src) {
+
+  dst->init = src->init; // 0xcf188, STR
+  dst->verify_recover_init = src->verify_recover_init; // 0xcf194, STR
+  dst->verify_recover = src->verify_recover; // 0xcf1a0, STR
+  dst->signctx_init = src->signctx_init; // 0xcf1ac, STR
+  dst->signctx = src->signctx; // 0xcf1b8, STR
+  dst->verifyctx_init = src->verifyctx_init; // 0xcf1d0, STR
+  dst->copy = src->copy; // 0xcf1d8, STR
+  dst->cleanup = src->cleanup; // 0xcf1dc, STR
+  dst->paramgen_init = src->paramgen_init; // 0xcf1e0, STR
+  dst->paramgen = src->paramgen; // 0xcf1e4, STR
+  dst->keygen_init = src->keygen_init; // 0xcf1e8, STR
+  dst->keygen = src->keygen; // 0xcf1ec, STR
+  dst->sign_init = src->sign_init; // 0xcf1f0, STR
+  dst->sign = src->sign; // 0xcf1f4, STR
+  dst->verify_init = src->verify_init; // 0xcf1f8, STR
+  dst->verify = src->verify; // 0xcf1fc, STR
+  dst->verifyctx = src->verifyctx; // 0xcf200, STR
+  dst->ctrl_str = src->ctrl_str; // 0xcf21c, STR
+  dst->encrypt_init = src->encrypt_init; // 0xcf220, STR
+  dst->encrypt = src->encrypt; // 0xcf224, STR
+  dst->decrypt_init = src->decrypt_init; // 0xcf228, STR
+  dst->decrypt = src->decrypt; // 0xcf22c, STR
+  dst->derive_init = src->derive_init; // 0xcf230, STR
+  dst->derive = src->derive; // 0xcf234, STR
+  dst->ctrl = src->ctrl; // 0xcf238, STR
+  return;
+}
+
+// Lifted code for function 0xcf244
+// --------------------------------------------------
+// Function decompilation
+
+int EVP_PKEY_CTX_get_operation(struct evp_pkey_ctx_st * ctx) {
+
+  return ctx->operation;
+}
+
+// Lifted code for function 0xcf24c
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_CTX_set0_keygen_info(struct evp_pkey_ctx_st * ctx, int * dat, int datlen) {
+
+  ctx->keygen_info_count = datlen; // 0xcf24c, STR
+  ctx->keygen_info = dat; // 0xcf250, STR
+  return;
+}
+
+// Lifted code for function 0xcf258
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_CTX_set_data(struct evp_pkey_ctx_st * ctx, void * data) {
+
+  ctx->data = data; // 0xcf258, STR
+  return;
+}
+
+// Lifted code for function 0xcf260
+// --------------------------------------------------
+// Function decompilation
+
+void * EVP_PKEY_CTX_get_data(struct evp_pkey_ctx_st * ctx) {
+
+  return ctx->data;
+}
+
+// Lifted code for function 0xcf268
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_pkey_st * EVP_PKEY_CTX_get0_pkey(struct evp_pkey_ctx_st * ctx) {
+
+  return ctx->pkey;
+}
+
+// Lifted code for function 0xcf270
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_pkey_st * EVP_PKEY_CTX_get0_peerkey(struct evp_pkey_ctx_st * ctx) {
+
+  return ctx->peerkey;
+}
+
+// Lifted code for function 0xcf278
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_CTX_set_app_data(struct evp_pkey_ctx_st * ctx, void * data) {
+
+  ctx->app_data = data; // 0xcf278, STR
+  return;
+}
+
+// Lifted code for function 0xcf280
+// --------------------------------------------------
+// Function decompilation
+
+void * EVP_PKEY_CTX_get_app_data(struct evp_pkey_ctx_st * ctx) {
+
+  return ctx->app_data;
+}
+
+// Lifted code for function 0xcf288
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_init(struct evp_pkey_method_st * pmeth, int (*init)(struct evp_pkey_ctx_st * ctx)) {
+
+  pmeth->init = init; // 0xcf288, STR
+  return;
+}
+
+// Lifted code for function 0xcf290
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_copy(struct evp_pkey_method_st * pmeth, int (*copy)(struct evp_pkey_ctx_st * dst, struct evp_pkey_ctx_st * src)) {
+
+  pmeth->copy = copy; // 0xcf290, STR
+  return;
+}
+
+// Lifted code for function 0xcf298
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_cleanup(struct evp_pkey_method_st * pmeth, void (*cleanup)(struct evp_pkey_ctx_st * ctx)) {
+
+  pmeth->cleanup = cleanup; // 0xcf298, STR
+  return;
+}
+
+// Lifted code for function 0xcf2a0
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_paramgen(struct evp_pkey_method_st * pmeth, int (*paramgen_init)(struct evp_pkey_ctx_st * ctx), int (*paramgen)(struct evp_pkey_ctx_st * ctx, struct evp_pkey_st * pkey)) {
+
+  pmeth->paramgen = paramgen; // 0xcf2a0, STR
+  pmeth->paramgen_init = paramgen_init; // 0xcf2a4, STR
+  return;
+}
+
+// Lifted code for function 0xcf2ac
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_keygen(struct evp_pkey_method_st * pmeth, int (*keygen_init)(struct evp_pkey_ctx_st * ctx), int (*keygen)(struct evp_pkey_ctx_st * ctx, struct evp_pkey_st * pkey)) {
+
+  pmeth->keygen = keygen; // 0xcf2ac, STR
+  pmeth->keygen_init = keygen_init; // 0xcf2b0, STR
+  return;
+}
+
+// Lifted code for function 0xcf2b8
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_sign(struct evp_pkey_method_st * pmeth, int (*sign_init)(struct evp_pkey_ctx_st * ctx), int (*sign)(struct evp_pkey_ctx_st * ctx, unsigned char * sig, unsigned long * siglen, unsigned char * tbs, unsigned long tbslen)) {
+
+  pmeth->sign = sign; // 0xcf2b8, STR
+  pmeth->sign_init = sign_init; // 0xcf2bc, STR
+  return;
+}
+
+// Lifted code for function 0xcf2c4
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_verify(struct evp_pkey_method_st * pmeth, int (*verify_init)(struct evp_pkey_ctx_st * ctx), int (*verify)(struct evp_pkey_ctx_st * ctx, unsigned char * sig, unsigned long siglen, unsigned char * tbs, unsigned long tbslen)) {
+
+  pmeth->verify = verify; // 0xcf2c4, STR
+  pmeth->verify_init = verify_init; // 0xcf2c8, STR
+  return;
+}
+
+// Lifted code for function 0xcf2d0
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_verify_recover(struct evp_pkey_method_st * pmeth, int (*verify_recover_init)(struct evp_pkey_ctx_st * ctx), int (*verify_recover)(struct evp_pkey_ctx_st * ctx, unsigned char * sig, unsigned long * siglen, unsigned char * tbs, unsigned long tbslen)) {
+
+  pmeth->verify_recover = verify_recover; // 0xcf2d0, STR
+  pmeth->verify_recover_init = verify_recover_init; // 0xcf2d4, STR
+  return;
+}
+
+// Lifted code for function 0xcf2dc
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_signctx(struct evp_pkey_method_st * pmeth, int (*signctx_init)(struct evp_pkey_ctx_st * ctx, struct env_md_ctx_st * mctx), int (*signctx)(struct evp_pkey_ctx_st * ctx, unsigned char * sig, unsigned long * siglen, struct env_md_ctx_st * mctx)) {
+
+  pmeth->signctx = signctx; // 0xcf2dc, STR
+  pmeth->signctx_init = signctx_init; // 0xcf2e0, STR
+  return;
+}
+
+// Lifted code for function 0xcf2e8
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_verifyctx(struct evp_pkey_method_st * pmeth, int (*verifyctx_init)(struct evp_pkey_ctx_st * ctx, struct env_md_ctx_st * mctx), int (*verifyctx)(struct evp_pkey_ctx_st * ctx, unsigned char * sig, int siglen, struct env_md_ctx_st * mctx)) {
+
+  pmeth->verifyctx = verifyctx; // 0xcf2e8, STR
+  pmeth->verifyctx_init = verifyctx_init; // 0xcf2ec, STR
+  return;
+}
+
+// Lifted code for function 0xcf2f4
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_encrypt(struct evp_pkey_method_st * pmeth, int (*encrypt_init)(struct evp_pkey_ctx_st * ctx), int (*encryptfn)(struct evp_pkey_ctx_st * ctx, unsigned char * out, unsigned long * outlen, unsigned char * in, unsigned long inlen)) {
+
+  pmeth->encrypt = encryptfn; // 0xcf2f4, STR
+  pmeth->encrypt_init = encrypt_init; // 0xcf2f8, STR
+  return;
+}
+
+// Lifted code for function 0xcf300
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_decrypt(struct evp_pkey_method_st * pmeth, int (*decrypt_init)(struct evp_pkey_ctx_st * ctx), int (*decrypt)(struct evp_pkey_ctx_st * ctx, unsigned char * out, unsigned long * outlen, unsigned char * in, unsigned long inlen)) {
+
+  pmeth->decrypt = decrypt; // 0xcf300, STR
+  pmeth->decrypt_init = decrypt_init; // 0xcf304, STR
+  return;
+}
+
+// Lifted code for function 0xcf30c
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_derive(struct evp_pkey_method_st * pmeth, int (*derive_init)(struct evp_pkey_ctx_st * ctx), int (*derive)(struct evp_pkey_ctx_st * ctx, unsigned char * key, unsigned long * keylen)) {
+
+  pmeth->derive = derive; // 0xcf30c, STR
+  pmeth->derive_init = derive_init; // 0xcf310, STR
+  return;
+}
+
+// Lifted code for function 0xcf318
+// --------------------------------------------------
+// Function decompilation
+
+void EVP_PKEY_meth_set_ctrl(struct evp_pkey_method_st * pmeth, int (*ctrl)(struct evp_pkey_ctx_st * ctx, int type, int p1, void * p2), int (*ctrl_str)(struct evp_pkey_ctx_st * ctx, char * type, char * value)) {
+
+  pmeth->ctrl_str = ctrl_str; // 0xcf318, STR
+  pmeth->ctrl = ctrl; // 0xcf31c, STR
+  return;
+}
+
+// Lifted code for function 0xcf7c0
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_pkey_method_st * EVP_PKEY_meth_new(int id, int flags) {
+  struct evp_pkey_method_st * pmeth;
+  int ssa_R2_2;
+
+  pmeth = CRYPTO_malloc(108, "pmeth_lib.c", 203); // 0xcf7e4, BL
+  if ((pmeth != 0)) {
+    memset(pmeth, 0, 108); // 0xcf7f8, BL
+    ssa_R2_2 = (flags | 1); // 0xcf800, ORR
+    pmeth->pkey_id = id; // 0xcf804, STR
+    pmeth->flags = ssa_R2_2; // 0xcf808, STR
+    pmeth->ctrl_str = 0; // 0xcf80c, STR
+    pmeth->init = 0; // 0xcf810, STR
+    pmeth->copy = 0; // 0xcf814, STR
+    pmeth->cleanup = 0; // 0xcf818, STR
+    pmeth->paramgen_init = 0; // 0xcf81c, STR
+    pmeth->paramgen = 0; // 0xcf820, STR
+    pmeth->keygen_init = 0; // 0xcf824, STR
+    pmeth->keygen = 0; // 0xcf828, STR
+    pmeth->sign_init = 0; // 0xcf82c, STR
+    pmeth->sign = 0; // 0xcf830, STR
+    pmeth->verify_init = 0; // 0xcf834, STR
+    pmeth->verify = 0; // 0xcf838, STR
+    pmeth->verify_recover_init = 0; // 0xcf83c, STR
+    pmeth->verify_recover = 0; // 0xcf840, STR
+    pmeth->signctx_init = 0; // 0xcf844, STR
+    pmeth->signctx = 0; // 0xcf848, STR
+    pmeth->verifyctx_init = 0; // 0xcf84c, STR
+    pmeth->verifyctx = 0; // 0xcf850, STR
+    pmeth->encrypt_init = 0; // 0xcf854, STR
+    pmeth->encrypt = 0; // 0xcf858, STR
+    pmeth->decrypt_init = 0; // 0xcf85c, STR
+    pmeth->decrypt = 0; // 0xcf860, STR
+    pmeth->derive_init = 0; // 0xcf864, STR
+    pmeth->derive = 0; // 0xcf868, STR
+    pmeth->ctrl = 0; // 0xcf86c, STR
+  } // if 
+  return pmeth;
+}
+
+// Lifted code for function 0xcfae8
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_pkey_ctx_st * EVP_PKEY_CTX_new_id(int id, struct engine_st * e) {
+  struct evp_pkey_ctx_st * ssa_R0_2;
+
+  ssa_R0_2 = int_ctx_new(0, e, id); // 0xcfaf0, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xcfaf4
+// --------------------------------------------------
+// Function decompilation
+
+struct evp_pkey_ctx_st * EVP_PKEY_CTX_new(struct evp_pkey_st * pkey, struct engine_st * e) {
+  struct evp_pkey_ctx_st * ssa_R0_1;
+
+  ssa_R0_1 = int_ctx_new(pkey, e, -1); // 0xcfaf8, BL
+  return ssa_R0_1;
+}

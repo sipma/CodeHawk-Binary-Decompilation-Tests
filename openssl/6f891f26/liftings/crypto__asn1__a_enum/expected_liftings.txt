@@ -1,0 +1,18 @@
+
+// Lifted code for function 0xd4c30
+// --------------------------------------------------
+// Function decompilation
+
+struct bignum_st * ASN1_ENUMERATED_to_BN(struct asn1_string_st * ai, struct bignum_st * bn) {
+  struct bignum_st * ret;
+
+  ret = BN_bin2bn(ai->data, ai->length, bn); // 0xd4c48, BL
+  if ((ret == 0)) {
+    ERR_put_error(13, 113, 105, "a_enum.c", 179); // 0xd4ca0, BL
+  } else {
+    if ((ai->type == 266)) {
+      BN_set_negative(ret, 1); // 0xd4c7c, BL
+    } // if 
+  } // if 
+  return ret;
+}

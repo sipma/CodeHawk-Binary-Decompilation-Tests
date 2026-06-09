@@ -1,0 +1,48 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xfd4e8",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xfd520",
+			"name": "idx"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 48,
+			"name": "pm",
+			"typename": "X509_VERIFY_PARAM"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xfd814",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xfd818",
+			"name": "save_flags",
+			"typename": "unsigned long",
+			"mods": ["cast"]
+		    },
+		    {
+			"iaddr": "0xfd82c",
+			"name": "ret"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xfd98c",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xfd9a8",
+			"name": "param",
+			"typename": "X509_VERIFY_PARAM",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    }
+	]
+    }
+}

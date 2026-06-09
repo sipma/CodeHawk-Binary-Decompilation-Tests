@@ -53,3 +53,19 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+
+# Emacs backup files
+*.xml~
+*.json~
+*.md~
+*.sh~
+*.yaml~
+*.i~
+*.c~
+*.h~
+.gitignore~
+
+# CodeHawk analysis files
+*.ch/
+*.chx.tar.gz

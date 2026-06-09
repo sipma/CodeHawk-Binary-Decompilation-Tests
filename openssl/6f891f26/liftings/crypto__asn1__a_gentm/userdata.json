@@ -1,0 +1,63 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xd2b0c",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd2b18",
+			"name": "ss",
+			"typename": "ASN1_GENERALIZED_TIME",
+			"mods": ["ptrto", "cast"]
+		    },
+		    {
+			"iaddr": "0xd2b38",
+			"name": "ts",
+			"typename": "TM",
+			"mods": ["ptrto", "cast"]
+		    },
+		    {
+			"iaddr": "0xd2b50",
+			"name": "p",
+			"typename": "char",
+			"mods": ["ptrto", "cast"]
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 68,
+			"name": "data",
+			"typename": "TM"
+		    },
+		    {
+			"offset": 76,
+			"name": "tt",
+			"typename": "time_t"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd2c70",
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0xd2c94"],
+			"name": "STR-rdef"
+		    },
+		    {
+			"action": "disable",
+			"locs": ["0xd2cb8"],
+			"name": "LDR-stack-addr"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 32,
+			"name": "t",
+			"typename": "ASN1_GENERALIZEDTIME"
+		    }
+		]
+	    }
+	]
+    }
+}

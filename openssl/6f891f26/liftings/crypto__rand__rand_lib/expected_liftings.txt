@@ -1,0 +1,14 @@
+
+// Lifted code for function 0xbf530
+// --------------------------------------------------
+// Function decompilation
+
+int RAND_set_rand_method(struct rand_meth_st * meth) {
+
+  if ((funct_ref != 0)) {
+    ENGINE_finish(funct_ref); // 0xbf554, BL
+    funct_ref = 0; // 0xbf55c, STR
+  } // if 
+  default_RAND_meth = meth; // 0xbf568, STR
+  return 1;
+}

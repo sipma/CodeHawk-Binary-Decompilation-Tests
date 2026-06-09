@@ -1,0 +1,69 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xd8bcc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd8bd8",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0xd8be8",
+			"name": "len"
+		    },
+		    {
+			"iaddr": "0xd8bfc",
+			"name": "v"
+		    },
+		    {
+			"iaddr": "0xd8c18",
+			"name": "ltmp"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 44,
+			"name": "intname"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd8c78",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd8c8c",
+			"name": "a",
+			"typename": "X509_NAME",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd8cdc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd8d04",
+			"name": "ret",
+			"typename": "X509_NAME",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xd8e18",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xd8e44",
+			"name": "in",
+			"typename": "X509_NAME",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    }
+	],
+	"symbolic-addresses": {
+	    "0x16f518": "X509_NAME_ENTRIES_item_tt"
+	}
+    }
+}

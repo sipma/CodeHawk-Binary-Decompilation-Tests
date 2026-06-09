@@ -1,0 +1,28 @@
+{
+    "file": "6f891f26",
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xcaeb4",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcaed4",
+			"name": "ctx",
+			"typename": "BIO_B64_CTX",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xcbe78",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcbea4",
+			"name": "ret"
+		    }
+		]
+	    }
+	]
+    }
+}
+	

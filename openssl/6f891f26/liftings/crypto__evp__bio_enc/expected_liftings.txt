@@ -1,0 +1,9 @@
+
+// Lifted code for function 0xcbea8
+// --------------------------------------------------
+// Function decompilation
+
+struct bio_method_st * BIO_f_cipher(void) {
+
+  return &(methods_enc);
+}

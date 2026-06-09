@@ -1,0 +1,96 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xf4ac4",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xf4ad0",
+			"name": "param"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xf52fc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xf5320",
+			"name": "ctx",
+			"typename": "X509_STORE_CTX",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xf5374",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xf539c",
+			"name": "idx"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xf54fc",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xf5528",
+			"name": "chain"
+		    },
+		    {
+			"iaddr": "0xf5538",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0xf5548",
+			"name": "x"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xf55d8",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xf55f4",
+			"name": "ret"
+		    },
+		    {
+			"iaddr": "0xf5604",
+			"name": "i"
+		    },
+		    {
+			"iaddr": "0xf5610",
+			"name": "ktmp"
+		    },
+		    {
+			"iaddr": "0xf56a0",
+			"name": "j"
+		    },
+		    {
+			"iaddr": "0xf56b4",
+			"name": "ktmp2"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xf5708",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xf5764",
+			"name": "ret"
+		    }
+		],
+		"stack-variable-introductions": [
+		    {
+			"offset": 20,
+			"name": "t",
+			"typename": "int"
+		    }
+		]
+	    }
+	],
+	"function-names": {
+	    "0x3a9dc": "memset"
+	}
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xccf40",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R0",
+			"uselocs": ["0xccf60"],
+			"rdeflocs": ["init"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xcd0f4",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcd110",
+			"name": "j"
+		    },
+		    {
+			"iaddr": "0xcd134",
+			"name": "i"
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xcd1ac",
+		"remove-reaching-definitions": [
+		    {
+			"var": "R5",
+			"uselocs": ["0xcd1cc"],
+			"rdeflocs": ["init"]
+		    }
+		],
+		"typing-rules": [
+		    {
+			"action": "disable",
+			"locs": ["0xcd1e8", "0xcd210"],
+			"name": "ADD-c"
+		    },
+		    {
+			"action": "disable",
+			"locs": ["0xcd21c:R2"],
+			"name": "BL-sig-regarg"
+		    }
+		],
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xcd1d8",
+			"name": "l",
+			"typename": "int"
+		    },
+		    {
+			"iaddr": "0xcd1f8",
+			"name": "i",
+			"typename": "int"
+		    }
+		]
+	    }
+	]
+    }
+}

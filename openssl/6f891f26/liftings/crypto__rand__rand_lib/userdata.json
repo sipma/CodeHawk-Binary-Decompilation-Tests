@@ -1,0 +1,28 @@
+{
+    "userdata": {
+	"function-annotations": [
+	    {
+		"faddr": "0xbf57c",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xbf5a0",
+			"name": "tmp_meth",
+			"typename": "RAND_METHOD",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    },
+	    {
+		"faddr": "0xbf5f8",
+		"register-variable-introductions": [
+		    {
+			"iaddr": "0xbf628",
+			"name": "e",
+			"typename": "ENGINE",
+			"mods": ["ptrto", "cast"]
+		    }
+		]
+	    }
+	]
+    }
+}

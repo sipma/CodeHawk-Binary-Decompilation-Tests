@@ -1,0 +1,198 @@
+
+// Lifted code for function 0x11a8e4
+// --------------------------------------------------
+// Function decompilation
+
+void * UI_get0_user_data(struct ui_st * ui) {
+
+  return ui->user_data;
+}
+
+// Lifted code for function 0x11a8ec
+// --------------------------------------------------
+// Function decompilation
+
+void UI_set_default_method(struct ui_method_st * meth) {
+
+  default_UI_meth = meth; // 0x11a8f8, STR
+  return;
+}
+
+// Lifted code for function 0x11a908
+// --------------------------------------------------
+// Function decompilation
+
+struct ui_method_st * UI_get_method(struct ui_st * ui) {
+
+  return ui->meth;
+}
+
+// Lifted code for function 0x11a910
+// --------------------------------------------------
+// Function decompilation
+
+struct ui_method_st * UI_set_method(struct ui_st * ui, struct ui_method_st * meth) {
+
+  ui->meth = meth; // 0x11a910, STR
+  return meth;
+}
+
+// Lifted code for function 0x11aacc
+// --------------------------------------------------
+// Function decompilation
+
+int UI_ctrl(struct ui_st * ui, int cmd, long i, void * p, void (*f)(void)) {
+  int ret;
+  int ssa_R3_2;
+
+  if ((ui == 0)) {
+    ERR_put_error(40, 111, 67, "ui_lib.c", "	"); // 0x11ab6c, BL
+    ret = -1; // 0x11ab70, MVN
+  } else {
+    if ((cmd == 1)) {
+      ssa_R3_2 = ((unsigned int)ui->flags >> 8); // 0x11ab28, LSR
+      ret = (((unsigned int)ui->flags >> 8) & 1); // 0x11ab2c, AND
+      if ((i != 0)) {
+        ssa_R3_2 = (ui->flags | 256); // 0x11ab30, ORR
+        ui->flags = ssa_R3_2; // 0x11ab38, STR
+      } else {
+        ssa_R3_2 = (ui->flags & ~256); // 0x11ab34, BIC
+        ui->flags = ssa_R3_2; // 0x11ab3c, STR
+      } // if 
+    } else {
+      if ((cmd == 2)) {
+        ret = (ui->flags & 1); // 0x11ab48, AND
+      } else {
+        ERR_put_error(40, 111, 106, "ui_lib.c", 572); // 0x11ab10, BL
+        ret = -1; // 0x11ab14, MVN
+      } // if 
+    } // if 
+  } // if 
+  return ret;
+}
+
+// Lifted code for function 0x11ade0
+// --------------------------------------------------
+// Function decompilation
+
+void UI_destroy_method(struct ui_method_st * ui_method) {
+
+  CRYPTO_free(ui_method->name); // 0x11adec, BL
+  ui_method->name = 0; // 0x11adf8, STR
+  CRYPTO_free(ui_method); // 0x11ae00, BL
+  return;
+}
+
+// Lifted code for function 0x11ae04
+// --------------------------------------------------
+// Function decompilation
+
+void free_string(struct ui_string_st * uis) {
+
+  if (((uis->flags & 1) != 0)) {
+    CRYPTO_free(uis->out_string); // 0x11ae28, BL
+    if ((uis->type == 3)) {
+      CRYPTO_free(uis->_.boolean_data.action_desc); // 0x11ae3c, BL
+      CRYPTO_free(uis->_.boolean_data.ok_chars); // 0x11ae44, BL
+      CRYPTO_free(uis->_.boolean_data.cancel_chars); // 0x11ae4c, BL
+    } // if 
+  } // if 
+  CRYPTO_free(uis); // 0x11ae20, BL
+  return;
+}
+
+// Lifted code for function 0x11aec8
+// --------------------------------------------------
+// Function decompilation
+
+struct ui_method_st * UI_create_method(char * name) {
+  struct ui_method_st * ui_method;
+  char * rtn_BUF_strdup__0;
+
+  ui_method = CRYPTO_malloc(28, "ui_lib.c", 621); // 0x11aeec, BL
+  if ((ui_method != 0)) {
+    ui_method->name = 0; // 0x11af00, STR
+    ui_method->ui_open_session = 0; // 0x11af08, STR
+    ui_method->ui_write_string = 0; // 0x11af10, STR
+    ui_method->ui_flush = 0; // 0x11af14, STR
+    ui_method->ui_read_string = 0; // 0x11af18, STR
+    ui_method->ui_close_session = 0; // 0x11af1c, STR
+    ui_method->ui_construct_prompt = 0; // 0x11af20, STR
+    rtn_BUF_strdup__0 = BUF_strdup(name); // 0x11af24, BL
+    ui_method->name = rtn_BUF_strdup__0; // 0x11af28, STR
+  } // if 
+  return ui_method;
+}
+
+// Lifted code for function 0x11af44
+// --------------------------------------------------
+// Function decompilation
+
+struct ui_method_st * UI_get_default_method(void) {
+  struct ui_method_st * ret;
+  struct ui_method_st * meth;
+
+  if ((default_UI_meth == 0)) {
+    meth = UI_OpenSSL(); // 0x11af70, BL
+    default_UI_meth = meth; // 0x11af74, STR
+  } // if 
+  ret = default_UI_meth; // 0x11af64, LDR
+  return ret;
+}
+
+// Lifted code for function 0x11af8c
+// --------------------------------------------------
+// Function decompilation
+
+int UI_set_ex_data(struct ui_st * r, int idx, void * arg) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = CRYPTO_set_ex_data(&(r->ex_data), idx, arg); // 0x11af90, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0x11af94
+// --------------------------------------------------
+// Function decompilation
+
+int UI_get_ex_new_index(long argl, void * argp, int (*new_func)(void * parent, void * ptr, struct crypto_ex_data_st * ad, int idx, long argl, void * argp), int (*dup_func)(struct crypto_ex_data_st * to, struct crypto_ex_data_st * from, void * from_d, int idx, long argl, void * argp), void (*free_func)(void * parent, void * ptr, struct crypto_ex_data_st * ad, int idx, long argl, void * argp)) {
+  int ret;
+
+  ret = CRYPTO_get_ex_new_index(11, argl, argp, new_func, dup_func, free_func); // 0x11afc0, BL
+  return ret;
+}
+
+// Lifted code for function 0x11b12c
+// --------------------------------------------------
+// Function decompilation
+
+char * UI_get0_result(struct ui_st * ui, int i) {
+  int rtn_sk_num__0;
+  unsigned char * rtn_sk_value__0;
+  char * ssa_R0_6;
+
+  if ((i < 0)) {
+    ERR_put_error(40, 107, 103, "ui_lib.c", 462); // 0x11b1b8, BL
+  } else {
+    rtn_sk_num__0 = sk_num((struct stack_st *)ui->strings); // 0x11b14c, BL
+    if ((i >= rtn_sk_num__0)) {
+      ERR_put_error(40, 107, 102, "ui_lib.c", 467); // 0x11b18c, BL
+    } else {
+      rtn_sk_value__0 = sk_value((struct stack_st *)ui->strings, i); // 0x11b160, BL
+      ssa_R0_6 = UI_get0_result_string((struct ui_string_st *)rtn_sk_value__0); // 0x11b16c, BL
+      return ssa_R0_6;
+    } // if 
+  } // if 
+  return (char *)0;
+}
+
+// Lifted code for function 0x11b808
+// --------------------------------------------------
+// Function decompilation
+
+struct ui_st * UI_new(void) {
+  struct ui_st * ssa_R0_1;
+
+  ssa_R0_1 = UI_new_method(0); // 0x11b80c, BL
+  return ssa_R0_1;
+}
