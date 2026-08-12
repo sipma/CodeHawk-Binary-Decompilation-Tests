@@ -1,4 +1,8 @@
+export FNS_INCLUDE="0xd4b98 0xd4c30 0xd4cb4 0xd4de0"
 #export FNS_LIFTED="0xd4b98 0xd4c30"
 export FNS_LIFTED="0xd4c30"
+export FNS_PENDING_ERRORS="0xd4cb4 0xd4de0"
+export FNS_PENDING_TYPING=""
+export FNS_PENDING_OTHER="0xd4b98"
 export BINARY="binary"
 export ORIGINAL_BINARY="../../shareddata/6f891f26"

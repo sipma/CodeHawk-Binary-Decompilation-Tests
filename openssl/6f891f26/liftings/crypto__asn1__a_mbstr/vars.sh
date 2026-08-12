@@ -1,3 +1,7 @@
+export FNS_INCLUDE="0xd60ec 0xd6100 0xd611c 0xd6140 0xd6180 0xd61ac 0xd61e0 0xd62ac 0xd6c9c"
 export FNS_LIFTED="0xd60ec 0xd6180 0xd61ac 0xd61e0 0xd6c9c"
+export FNS_PENDING_ERRORS="0xd62ac"
+export FNS_PENDING_TYPING=""
+export FNS_PENDING_OTHER="0xd6100 0xd611c 0xd6140"
 export BINARY="binary"
 export ORIGINAL_BINARY="../../shareddata/6f891f26"
