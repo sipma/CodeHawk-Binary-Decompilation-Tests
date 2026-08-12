@@ -10,47 +10,47 @@
 #ifndef LIBBB_H
 #define LIBBB_H 1
 
-#include "platform.h"
+// #include "platform.h"    CHB: localized into header_platform.h
 
-#include <ctype.h>
-#include <dirent.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <inttypes.h>
-#include <netdb.h>
-#include <setjmp.h>
-#include <signal.h>
+// #include <ctype.h>       CHB: exclude
+// #include <dirent.h>      CHB: exclude
+// #include <errno.h>       CHB: exclude
+// #include <fcntl.h>       CHB: exclude
+// #include <inttypes.h>    CHB: exclude
+// #include <netdb.h>       CHB: exclude
+// #include <setjmp.h>      CHB: exclude
+// #include <signal.h>      CHB: exclude
 #if defined __UCLIBC__ /* TODO: and glibc? */
 /* use inlined versions of these: */
 # define sigfillset(s)    __sigfillset(s)
 # define sigemptyset(s)   __sigemptyset(s)
 # define sigisemptyset(s) __sigisemptyset(s)
 #endif
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <stddef.h>
-#include <string.h>
-#include <sys/poll.h>
-#include <sys/ioctl.h>
-#include <sys/mman.h>
-#include <sys/socket.h>
-#include <sys/stat.h>
-#include <sys/time.h>
-#include <sys/types.h>
+// #include <stdint.h>      CHB: exclude
+// #include <stdio.h>       CHB: exclude
+// #include <stdlib.h>      CHB: exclude
+// #include <stdarg.h>      CHB: exclude
+// #include <stddef.h>      CHB: exclude
+// #include <string.h>      CHB: exclude
+// #include <sys/poll.h>    CHB: exclude
+// #include <sys/ioctl.h>   CHB: exclude
+// #include <sys/mman.h>    CHB: exclude
+// #include <sys/socket.h>  CHB: exclude
+// #include <sys/stat.h>    CHB: exclude
+// #include <sys/time.h>    CHB: exclude
+// #include <sys/types.h>   CHB: exclude
 #ifndef major
-# include <sys/sysmacros.h>
+// # include <sys/sysmacros.h>    CHB: exclude
 #endif
-#include <sys/wait.h>
-#include <termios.h>
-#include <time.h>
-#include <sys/param.h>
+// #include <sys/wait.h>    CHB: exclude
+// #include <termios.h>     CHB: exclude
+// #include <time.h>
+// #include <sys/param.h>
 #ifdef HAVE_MNTENT_H
-# include <mntent.h>
+// # include <mntent.h>     CHB: exclude
 #endif
 #ifdef HAVE_SYS_STATFS_H
-# include <sys/statfs.h>
+// # include <sys/statfs.h> CHB: exclude
 #endif
 /* Don't do this here:
  * #include <sys/sysinfo.h>
@@ -75,8 +75,8 @@
 #ifdef DMALLOC
 # include <dmalloc.h>
 #endif
-#include <pwd.h>
-#include <grp.h>
+// #include <pwd.h>      CHB: exclude
+// #include <grp.h>      CHB: exclude
 #if ENABLE_FEATURE_SHADOWPASSWDS
 # if !ENABLE_USE_BB_SHADOW
 /* If using busybox's shadow implementation, do not include the shadow.h
@@ -104,7 +104,7 @@
 #elif defined __APPLE__
 # include <netinet/in.h>
 #else
-# include <arpa/inet.h>
+// # include <arpa/inet.h>    CHB: exclude
 # if !defined(__socklen_t_defined) && !defined(_SOCKLEN_T_DECLARED)
 /* We #define socklen_t *after* includes, otherwise we get
  * typedef redefinition errors from system headers
@@ -548,6 +548,7 @@ typedef struct len_and_sockaddr {
 #endif
 	} u;
 } len_and_sockaddr;
+/* CHB replace enum definition with #defines
 enum {
 	LSA_LEN_SIZE = offsetof(len_and_sockaddr, u),
 	LSA_SIZEOF_SA = sizeof(
@@ -559,7 +560,7 @@ enum {
 #endif
 		}
 	)
-};
+        };  */
 /* Create stream socket, and allocate suitable lsa.
  * (lsa of correct size and lsa->sa.sa_family (AF_INET/AF_INET6))
  * af == AF_UNSPEC will result in trying to create IPv6 socket,
@@ -823,7 +824,7 @@ struct suffix_mult {
 	char suffix[4];
 	unsigned mult;
 };
-#include "xatonum.h"
+#include "header_xatonum.h"     // CHB: include localized version
 /* Specialized: */
 
 /* Using xatoi() instead of naive atoi() is not always convenient -
@@ -1613,7 +1614,8 @@ uint32_t crc32_block_endian0(uint32_t val, const void *buf, unsigned len, uint32
 
 typedef struct masks_labels_t {
 	const char *labels;
-	const int masks[];
+  // const int masks[];
+  const int masks[10];   // CHB: assign a size
 } masks_labels_t;
 int print_flags_separated(const int *masks, const char *labels,
 		int flags, const char *separator) FAST_FUNC;

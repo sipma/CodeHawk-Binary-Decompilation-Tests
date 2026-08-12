@@ -134,8 +134,7 @@
 
 
 /* ---- Endian Detection ------------------------------------ */
-
-#include <limits.h>
+// #include <limits.h>   CHB: exclude
 #if defined(__digital__) && defined(__unix__)
 # include <sex.h>
 #elif defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) \
@@ -146,10 +145,11 @@
 # define bswap_32 __bswap32
 # define bswap_16 __bswap16
 #else
-# include <byteswap.h>
-# include <endian.h>
+// # include <byteswap.h>  CHB: exclude
+// # include <endian.h>    CHB: exclude
 #endif
 
+/* CHB: hardcode endiannes
 #if defined(__BYTE_ORDER) && __BYTE_ORDER == __BIG_ENDIAN
 # define BB_BIG_ENDIAN 1
 # define BB_LITTLE_ENDIAN 0
@@ -174,6 +174,7 @@
 #else
 # error "Can't determine endianness"
 #endif
+*/
 
 #if ULONG_MAX > 0xffffffff
 # define bb_bswap_64(x) bswap_64(x)
@@ -203,7 +204,7 @@
 
 /* ---- Unaligned access ------------------------------------ */
 
-#include <stdint.h>
+// #include <stdint.h>       CHB: exclude
 typedef int      bb__aliased_int      FIX_ALIASING;
 typedef uint16_t bb__aliased_uint16_t FIX_ALIASING;
 typedef uint32_t bb__aliased_uint32_t FIX_ALIASING;
@@ -280,7 +281,7 @@ typedef unsigned smalluint;
 #endif
 
 /* fdprintf is more readable, we used it before dprintf was standardized */
-#include <unistd.h>
+// #include <unistd.h>     CHB: exclude
 #define fdprintf dprintf
 
 /* Useful for defeating gcc's alignment of "char message[]"-like data */
@@ -313,8 +314,8 @@ typedef unsigned smalluint;
 #endif
 
 #if defined(__digital__) && defined(__unix__)
-# include <standards.h>
-# include <inttypes.h>
+// # include <standards.h>     CHB: exclude
+// # include <inttypes.h>      CHB: exclude
 # define PRIu32 "u"
 # if !defined ADJ_OFFSET_SINGLESHOT && defined MOD_CLKA && defined MOD_OFFSET
 #  define ADJ_OFFSET_SINGLESHOT (MOD_CLKA | MOD_OFFSET)
@@ -495,8 +496,8 @@ extern int vasprintf(char **string_ptr, const char *format, va_list p) FAST_FUNC
 #endif
 
 #ifndef HAVE_GETLINE
-# include <stdio.h> /* for FILE */
-# include <sys/types.h> /* size_t */
+// # include <stdio.h> /* for FILE */  CHB: exclude
+// # include <sys/types.h> /* size_t */    CHB: exclude
 extern ssize_t getline(char **lineptr, size_t *n, FILE *stream) FAST_FUNC;
 #endif
 
