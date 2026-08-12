@@ -18,9 +18,10 @@ identified by the first 8 characters of its MD5 hash:
 
 Currently available:
 
-| Package | Hash | Description |
-|---------|------|-------------|
-| `openssl` | `6f891f26` | OpenSSL 1.0.1g libcrypto, ARM 32-bit ELF |
+| Package | Hash | Description | Functions analyzed | Functions lifted |
+|---------|------|-------------|------:|-----:|
+| `busybox` | `8b996feb` | Busybox v1.19.4, ARM 32-bit ELF | 125 | 52 |
+| `openssl` | `6f891f26` | OpenSSL 1.0.1g libcrypto, ARM 32-bit ELF | 379 | 169 |
 
 ## Prerequisites
 
