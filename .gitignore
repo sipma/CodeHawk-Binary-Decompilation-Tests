@@ -69,3 +69,5 @@ dkms.conf
 # CodeHawk analysis files
 *.ch/
 *.chx.tar.gz
+*.i
+binary

@@ -67,7 +67,7 @@ typedef unsigned int uint32_t;
 typedef long long int int64_t;
 typedef unsigned long long uint64_t;
 
-typedef long int __off_t;
+typedef long long int __off_t;
 typedef __off_t off_t;
 typedef int64_t __off64_t;
 
@@ -550,6 +550,16 @@ extern long int gethostid (void);
 // # 186 "/usr/include/grp.h" 3 4
 extern int getgrouplist (const char *__user, __gid_t __group,
     __gid_t *__groups, int *__ngroups);
+
+// # 33 "/usr/include/grp.h" 2 3 4
+struct group
+  {
+    char *gr_name;
+    char *gr_passwd;
+    __gid_t gr_gid;
+    char **gr_mem;
+  };
+typedef struct group ch__group;
 
 // # 738 "/usr/include/stdlib.h" 3 4
 extern char *mkdtemp (char *__template) __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1))) ;
