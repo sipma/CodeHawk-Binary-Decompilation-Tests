@@ -11,14 +11,13 @@ void * ASN1_item_d2i_bio(struct ASN1_ITEM_st * it, struct bio_st * in, void * x)
   struct buf_mem_st * b;
 
   b = 0; // 0xd46cc, STR
-  ret = x; // 0xd46dc, MOV
   len = asn1_d2i_read_bio(in, &(b)); // 0xd46e0, BL
   if ((len < 0)) {
     ret = 0; // 0xd46e8, MOV
   } // if 
   if ((len >= 0)) {
     p = b->data; // 0xd4700, STR
-    rtn_ASN1_item_d2i__0 = ASN1_item_d2i((struct ASN1_VALUE_st * *)ret, (unsigned char * *)&(p), (long)len, it); // 0xd4710, BL
+    rtn_ASN1_item_d2i__0 = ASN1_item_d2i((struct ASN1_VALUE_st * *)x, (unsigned char * *)&(p), (long)len, it); // 0xd4710, BL
     ret = rtn_ASN1_item_d2i__0; // 0xd4714, MOV
   } // if 
   if ((b != 0)) {

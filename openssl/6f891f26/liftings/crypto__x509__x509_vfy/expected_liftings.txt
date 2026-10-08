@@ -286,13 +286,14 @@ int X509_get_pubkey_parameters(struct evp_pkey_st * pkey, struct stack_st_X509 *
   struct evp_pkey_st * ktmp;
   int rtn_EVP_PKEY_missing_parameters__0;
   int rtn_sk_num__0;
+  int ssa_R0_5;
   void * rtn_sk_value__1;
   struct evp_pkey_st * ktmp2;
 
   if ((pkey != 0)) {
     ret = EVP_PKEY_missing_parameters(pkey); // 0xf55f4, BL
     if ((ret == 0)) {
-      ret = (ret + 1); // 0xf55fc, ADD
+      ssa_R0_5 = (ret + 1); // 0xf55fc, ADD
     } // if 
     if ((ret == 0)) {
       goto L0xf5670;
@@ -306,7 +307,7 @@ int X509_get_pubkey_parameters(struct evp_pkey_st * pkey, struct stack_st_X509 *
       ktmp = X509_get_pubkey((struct x509_st *)rtn_sk_value__0); // 0xf5610, BL
       if ((ktmp == 0)) {
         ERR_put_error(11, 110, 108, "x509_vfy.c", 1801); // 0xf5694, BL
-        ret = 0; // 0xf5698, MOV
+        ssa_R0_5 = 0; // 0xf5698, MOV
         break;
       } else {
         rtn_EVP_PKEY_missing_parameters__0 = EVP_PKEY_missing_parameters(ktmp); // 0xf561c, BL
@@ -330,7 +331,7 @@ int X509_get_pubkey_parameters(struct evp_pkey_st * pkey, struct stack_st_X509 *
             EVP_PKEY_copy_parameters(pkey, ktmp); // 0xf56e4, BL
           } // if 
           EVP_PKEY_free(ktmp); // 0xf56ec, BL
-          ret = 1; // 0xf56f0, MOV
+          ssa_R0_5 = 1; // 0xf56f0, MOV
           break;
         } else {
           EVP_PKEY_free(ktmp); // 0xf562c, BL
@@ -339,12 +340,12 @@ int X509_get_pubkey_parameters(struct evp_pkey_st * pkey, struct stack_st_X509 *
       } // if 
     } else {
       ERR_put_error(11, 110, 107, "x509_vfy.c", 1814); // 0xf5668, BL
-      ret = 0; // 0xf566c, MOV
+      ssa_R0_5 = 0; // 0xf566c, MOV
       break;
     } // if 
   }  // loop 
    L0xf5670:
-  return ret;
+  return ssa_R0_5;
 }
 
 // Lifted code for function 0xf57ac

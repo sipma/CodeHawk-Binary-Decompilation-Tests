@@ -1,0 +1,45 @@
+{
+    "userdata": {
+        "function-annotations": [
+            {
+                "faddr": "0x1ec30",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0x1ec44",
+                        "name": "n"
+                    },
+                    {
+                        "iaddr": "0x1ec54",
+                        "name": "d"
+                    },
+                    {
+                        "iaddr": "0x1ec50",
+                        "name": "s",
+                        "typename": "char",
+                        "mods": ["ptrto"]
+                    }
+                ],
+                "stack-variable-introductions": [
+                    {
+                        "offset": 240,
+                        "name": "buf",
+                        "typename": "char",
+                        "mods": ["array:232"]
+                    }
+                ]
+            },
+            {
+                "faddr": "0x1ed64",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0x1ed64",
+                        "name": "i"
+                    }
+                ]
+            }
+        ],
+        "symbolic-addresses": {
+            "0x60293": "dhcp_option_strings"
+        }
+    }
+}

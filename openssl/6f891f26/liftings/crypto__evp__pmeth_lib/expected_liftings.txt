@@ -13,15 +13,12 @@ int pmeth_cmp(struct evp_pkey_method_st * * a, struct evp_pkey_method_st * * b) 
 // Function decompilation
 
 void EVP_PKEY_meth_get0_info(int * ppkey_id, int * pflags, struct evp_pkey_method_st * meth) {
-  int ssa_R3_0;
 
   if ((ppkey_id != 0)) {
-    ssa_R3_0 = meth->pkey_id; // 0xcf164, LDR
-    (*(ppkey_id)) = ssa_R3_0; // 0xcf168, STR
+    (*(ppkey_id)) = meth->pkey_id; // 0xcf168, STR
   } // if 
   if ((pflags != 0)) {
-    ssa_R3_0 = meth->flags; // 0xcf170, LDR
-    (*(pflags)) = ssa_R3_0; // 0xcf174, STR
+    (*(pflags)) = meth->flags; // 0xcf174, STR
   } // if 
   return;
 }

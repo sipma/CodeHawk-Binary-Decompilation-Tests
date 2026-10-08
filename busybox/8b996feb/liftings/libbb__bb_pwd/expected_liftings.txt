@@ -1,0 +1,135 @@
+
+// Lifted code for function 0x4e844
+// --------------------------------------------------
+// Function decompilation
+
+char * uid2uname(unsigned int uid) {
+  struct passwd * rtn_getpwuid__0;
+
+  rtn_getpwuid__0 = getpwuid(uid); // 0x4e848, BL
+  if ((rtn_getpwuid__0 != 0)) {
+    rtn_getpwuid__0 = rtn_getpwuid__0->pw_name; // 0x4e850, LDR
+  } // if 
+  return rtn_getpwuid__0;
+}
+
+// Lifted code for function 0x4e7c8
+// --------------------------------------------------
+// Function decompilation
+
+struct passwd * xgetpwnam(char * name) {
+  struct passwd * rtn_getpwnam__0;
+
+  rtn_getpwnam__0 = getpwnam(name); // 0x4e7d0, BL
+  if ((rtn_getpwnam__0 != 0)) {
+    return rtn_getpwnam__0;
+  } // if 
+  bb_error_msg_and_die("unknown user %s", name); // 0x4e7e4, BL
+}
+
+// Lifted code for function 0x4e7ec
+// --------------------------------------------------
+// Function decompilation
+
+struct group * xgetgrnam(char * name) {
+  struct group * rtn_getgrnam__0;
+
+  rtn_getgrnam__0 = getgrnam(name); // 0x4e7f4, BL
+  if ((rtn_getgrnam__0 != 0)) {
+    return rtn_getgrnam__0;
+  } // if 
+  bb_error_msg_and_die("unknown group %s", name); // 0x4e808, BL
+}
+
+// Lifted code for function 0x4e810
+// --------------------------------------------------
+// Function decompilation
+
+struct passwd * xgetpwuid(unsigned int uid) {
+  struct passwd * rtn_getpwuid__0;
+
+  rtn_getpwuid__0 = getpwuid(uid); // 0x4e818, BL
+  if ((rtn_getpwuid__0 != 0)) {
+    return rtn_getpwuid__0;
+  } // if 
+  bb_error_msg_and_die("unknown uid %u", uid); // 0x4e82c, BL
+}
+
+// Lifted code for function 0x4e834
+// --------------------------------------------------
+// Function decompilation
+
+char * xuid2uname(unsigned int uid) {
+  struct passwd * rtn_xgetpwuid__0;
+
+  rtn_xgetpwuid__0 = xgetpwuid(uid); // 0x4e838, BL
+  return rtn_xgetpwuid__0->pw_name;
+}
+
+// Lifted code for function 0x4e858
+// --------------------------------------------------
+// Function decompilation
+
+char * gid2group(unsigned int gid) {
+  struct group * rtn_getgrgid__0;
+
+  rtn_getgrgid__0 = getgrgid(gid); // 0x4e85c, BL
+  if ((rtn_getgrgid__0 != 0)) {
+    rtn_getgrgid__0 = rtn_getgrgid__0->gr_name; // 0x4e864, LDR
+  } // if 
+  return rtn_getgrgid__0;
+}
+
+// Lifted code for function 0x4e8bc
+// --------------------------------------------------
+// Function decompilation
+
+long xgroup2gid(char * name) {
+  struct group * rtn_xgetgrnam__0;
+
+  rtn_xgetgrnam__0 = xgetgrnam(name); // 0x4e8c0, BL
+  return rtn_xgetgrnam__0->gr_gid;
+}
+
+// Lifted code for function 0x4e86c
+// --------------------------------------------------
+// Function decompilation
+
+char * uid2uname_utoa(unsigned int uid) {
+  char * rtn_uid2uname__0;
+  char * ssa_R0_2;
+
+  rtn_uid2uname__0 = uid2uname(uid); // 0x4e874, BL
+  if ((rtn_uid2uname__0 != 0)) {
+    return rtn_uid2uname__0;
+  } // if 
+  ssa_R0_2 = utoa(uid); // 0x4e888, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0x4e88c
+// --------------------------------------------------
+// Function decompilation
+
+char * gid2group_utoa(unsigned int gid) {
+  char * rtn_gid2group__0;
+  char * ssa_R0_2;
+
+  rtn_gid2group__0 = gid2group(gid); // 0x4e894, BL
+  if ((rtn_gid2group__0 != 0)) {
+    return rtn_gid2group__0;
+  } // if 
+  ssa_R0_2 = utoa(gid); // 0x4e8a8, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0x4e8ac
+// --------------------------------------------------
+// Function decompilation
+
+long xuname2uid(char * name) {
+  struct passwd * rtn_xgetpwnam__0;
+
+  rtn_xgetpwnam__0 = xgetpwnam(name); // 0x4e8b0, BL
+  return rtn_xgetpwnam__0->pw_uid;
+}

@@ -1,0 +1,45 @@
+{
+    "userdata": {
+        "function-annotations": [
+            {
+                "faddr": "0x1e070",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0x1e078",
+                        "name": "dst",
+                        "typename": "unsigned char",
+                        "mods": ["ptrto"]
+                    },
+                    {
+                        "iaddr": "0x1e084",
+                        "name": "len"
+                    },
+                    {
+                        "iaddr": "0x1e08c",
+                        "name": "depth"
+                    },
+                    {
+                        "iaddr": "0x1e090",
+                        "name": "retpos"
+                    },
+                    {
+                        "iaddr": "0x1e094",
+                        "name": "crtpos"
+                    },
+                    {
+                        "iaddr": "0x1e0a4",
+                        "name": "c"
+                    },
+                    {
+                        "iaddr": "0x1e178",
+                        "name": "plen"
+                    },
+                    {
+                        "iaddr": "0x1e0c4",
+                        "name": "ret"
+                    }
+                ]
+            }
+        ]
+    }
+}

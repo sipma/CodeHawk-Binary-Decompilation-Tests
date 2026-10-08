@@ -1,0 +1,16 @@
+{
+    "userdata": {
+        "function-annotations": [
+            {
+                "faddr": "0xd1ac",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0xd1c0",
+                        "name": "tmp_n",
+                        "typename": "int"
+                    }
+                ]
+            }
+        ]
+    }
+}

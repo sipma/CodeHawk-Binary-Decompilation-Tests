@@ -1,0 +1,11 @@
+
+// Lifted code for function 0xde64
+// --------------------------------------------------
+// Function decompilation
+
+long long bb_copyfd_eof(int fd1, int fd2) {
+  long long ssa_R0_1;
+
+  ssa_R0_1 = bb_full_fd_action(fd1, fd2, 0); // 0xde6c, BL
+  return ssa_R0_1;
+}

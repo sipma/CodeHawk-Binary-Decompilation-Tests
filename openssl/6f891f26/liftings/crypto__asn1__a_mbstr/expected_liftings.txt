@@ -78,8 +78,10 @@ int type_str(unsigned long value, unsigned long * arg) {
   if (((((value >= 0x10000) || (value < 0)) & (types >> 11)) != 0)) {
     types = (types & ~2048); // 0xd6244, BIC
   } // if 
-  ssa_R0_1 = ((types != 0) ? 1 : -1); // 0xd6250, MOV (ternary assign)
-  if ((types != 0)) {
+  if ((types == 0)) {
+    ssa_R0_1 = -1; // 0xd624c, MVN
+  } else {
+    ssa_R0_1 = 1; // 0xd6250, MOV
     (*(arg)) = types; // 0xd6254, STR
   } // if 
   return ssa_R0_1;

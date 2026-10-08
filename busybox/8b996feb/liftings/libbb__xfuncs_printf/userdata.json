@@ -1,0 +1,58 @@
+{
+    "userdata": {
+        "function-annotations": [
+            {
+                "faddr": "0xd548",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0xd550",
+                        "name": "ptr"
+                    },
+                    {
+                        "iaddr": "0xd554",
+                        "name": "tmp",
+                        "typename": "unsigned int",
+                        "mods": ["cast"]
+                    }
+                ]
+            },
+            {
+                "faddr": "0xd578",
+                "register-variable-introductions": [
+                    {
+
+                        "iaddr": "0xd580",
+                        "name": "ptr"
+                    },
+                    {
+                        "iaddr": "0xd584",
+                        "name": "tmp",
+                        "typename": "unsigned int",
+                        "mods": ["cast"]
+                    }
+                ]
+            },
+            {
+                "faddr": "0xd5f8",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0xd5fc",
+                        "name": "t"
+                    },
+                    {
+                        "iaddr": "0xd604",
+                        "name": "m",
+                        "typename": "unsigned int",
+                        "mods": ["cast"]
+                    },
+                    {
+                        "iaddr": "0xd61c",
+                        "name": "tmp",
+                        "typename": "unsigned int",
+                        "mods": ["cast"]
+                    }
+                ]
+            }
+        ]
+    }
+}

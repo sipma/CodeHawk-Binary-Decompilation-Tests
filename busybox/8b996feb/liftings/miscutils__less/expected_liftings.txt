@@ -1,0 +1,30 @@
+
+// Lifted code for function 0x10a78
+// --------------------------------------------------
+// Function decompilation
+
+void buffer_up(int nlines) {
+
+  less_globals->cur_fline = (less_globals->cur_fline - nlines); // 0x10a8c, STR
+  if (((less_globals->cur_fline - nlines) < 0)) {
+    less_globals->cur_fline = 0; // 0x10a98, STR
+  } // if 
+  read_lines(); // 0x10a9c, BL
+  buffer_fill_and_print(); // 0x10aa4, BL
+  return;
+}
+
+// Lifted code for function 0x10b18
+// --------------------------------------------------
+// Function decompilation
+
+void less_exit(int code) {
+
+  set_tty_cooked(); // 0x10b20, BL
+  clear_line(); // 0x10b24, BL
+  if ((code >= 0)) {
+    exit(code); // 0x10b3c, BL
+  } else {
+    kill_myself_with_sig((0 - code)); // 0x10b34, BL
+  } // if 
+}

@@ -1,0 +1,74 @@
+{
+    "userdata": {
+        "function-annotations": [
+            {
+                "faddr": "0x54d78",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0x54d80",
+                        "name": "str",
+                        "typename": "char",
+                        "mods": ["ptrto"]
+                    },
+                    {
+                        "iaddr": "0x54d8c",
+                        "name": "n"
+                    },
+                    {
+                        "iaddr": "0x54e24",
+                        "name": "c"
+                    }
+                ]
+            },
+            {
+                "faddr": "0x54dfc",
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0x54e08",
+                        "name": "fd"
+                    },
+                    {
+                        "iaddr": "0x54e10",
+                        "name": "ret"
+                    },
+                    {
+                        "iaddr": "0x54e30",
+                        "name": "index",
+                        "typename": "int"
+                    }
+                ]
+            },
+            {
+                "faddr": "0x556b0",
+                "stack-variable-introductions": [
+                    {
+                        "offset": 56,
+                        "name": "filename",
+                        "typename": "char",
+                        "mods": ["array:32"]
+                    }
+                ],
+                "register-variable-introductions": [
+                    {
+                        "iaddr": "0x556e0",
+                        "name": "sz",
+                        "typename": "int"
+                    },
+                    {
+                        "iaddr": "0x55720",
+                        "name": "base"
+                    },
+                    {
+                        "iaddr": "0x55760",
+                        "name": "comm_len"
+                    }
+                ]
+            }
+        ],
+        "symbolic-addresses": {
+            "0x6d7ec": "username",
+            "0x6d7f4": "groupname"
+        }
+    }
+}
+

@@ -12,3 +12,35 @@ int RAND_set_rand_method(struct rand_meth_st * meth) {
   default_RAND_meth = meth; // 0xbf568, STR
   return 1;
 }
+
+// Lifted code for function 0xbf5f8
+// --------------------------------------------------
+// Function decompilation
+
+struct rand_meth_st * RAND_get_rand_method(void) {
+  struct rand_meth_st * ssa_R0_0;
+  struct engine_st * e;
+  struct rand_meth_st * rtn_ENGINE_get_RAND__0;
+  struct rand_meth_st * rtn_RAND_SSLeay__0;
+
+  if ((default_RAND_meth == 0)) {
+    e = ENGINE_get_default_RAND(); // 0xbf628, BL
+    if ((e != 0)) {
+      rtn_ENGINE_get_RAND__0 = ENGINE_get_RAND(e); // 0xbf634, BL
+      default_RAND_meth = rtn_ENGINE_get_RAND__0; // 0xbf63c, STR
+      if ((rtn_ENGINE_get_RAND__0 != 0)) {
+        funct_ref = e; // 0xbf644, STR
+      } // if 
+      if ((rtn_ENGINE_get_RAND__0 != 0)) {
+        goto L0xbf61c;
+      } else {
+        ENGINE_finish(e); // 0xbf650, BL
+      } // if 
+    } // if 
+    rtn_RAND_SSLeay__0 = RAND_SSLeay(); // 0xbf654, BL
+    default_RAND_meth = rtn_RAND_SSLeay__0; // 0xbf658, STR
+  } // if 
+   L0xbf61c:
+  ssa_R0_0 = default_RAND_meth; // 0xbf61c, LDR
+  return ssa_R0_0;
+}
