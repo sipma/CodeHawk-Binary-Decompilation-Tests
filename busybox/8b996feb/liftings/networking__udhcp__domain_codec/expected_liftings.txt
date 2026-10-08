@@ -1,0 +1,106 @@
+
+// Lifted code for function 0x1e070
+// --------------------------------------------------
+// Function decompilation
+
+char * dname_dec(unsigned char * cstr, int clen, char * pre) {
+  unsigned int plen;
+  unsigned char * rtn_xmalloc__0;
+  unsigned int ssa_R2_1;
+  unsigned char ssa_R2_3;
+  short len;
+  unsigned char * dst;
+  int retpos;
+  unsigned char * ssa_R7_1;
+  unsigned char * ret;
+  unsigned char * c;
+  char depth;
+  int crtpos;
+  unsigned int ssa_R11_3;
+  unsigned int ssa_R3_1;
+  unsigned char ssa_R3_6;
+
+  dst = 0; // 0x1e078, MOV
+  while (1) {
+     L0x1e084:
+    len = 0; // 0x1e084, MOV
+    depth = 0; // 0x1e08c, MOV
+    retpos = 0; // 0x1e090, MOV
+    crtpos = 0; // 0x1e094, MOV
+    break;
+  }  // loop 
+  while (1) {
+    if (((crtpos >= clen) || (crtpos < 0))) {
+      ret = ssa_R7_1; // 0x1e0d4, MOV
+      if ((len != 0)) {
+        if ((dst != 0)) {
+          (*(((dst + len) - 1))) = 0; // 0x1e1c4, STRB
+          break;
+        } else {
+          plen = strlen(pre); // 0x1e178, BL
+          rtn_xmalloc__0 = xmalloc((plen + len)); // 0x1e184, BL
+          ssa_R7_1 = rtn_xmalloc__0; // 0x1e190, MOV
+          memcpy(rtn_xmalloc__0, pre, plen); // 0x1e194, BL
+          dst = (rtn_xmalloc__0 + plen); // 0x1e198, ADD
+          goto L0x1e084;
+        } // if 
+      } else {
+        ret = 0; // 0x1e0dc, MOV
+        break;
+      } // if 
+    } else {
+      c = (cstr + crtpos); // 0x1e0a4, ADD
+      ssa_R2_1 = cstr[crtpos]; // 0x1e0a8, LDRB
+      ssa_R3_1 = (ssa_R2_1 & 192); // 0x1e0ac, AND
+      if ((ssa_R3_1 != 192)) {
+        if ((ssa_R2_1 != 0)) {
+          if ((((ssa_R2_1 + (crtpos + 1)) > clen) || ((ssa_R2_1 + (crtpos + 1)) < 0))) {
+            goto L0x1e0c4;
+          } else {
+            if ((dst != 0)) {
+              memcpy((dst + len), (c + 1), ssa_R2_1); // 0x1e148, BL
+            } // if 
+            ssa_R2_3 = (*(c)); // 0x1e14c, LDRB
+            crtpos = (ssa_R2_3 + (crtpos + 1)); // 0x1e158, ADD
+            len = ((ssa_R2_3 + len) + 1); // 0x1e15c, ADD
+            if ((dst != 0)) {
+              dst[(ssa_R2_3 + len)] = 46; // 0x1e164, STRB
+            } // if 
+          } // if 
+        } else {
+          if ((retpos == 0)) {
+            crtpos = (crtpos + 1); // 0x1e0f0, ADD
+          } else {
+            crtpos = retpos; // 0x1e0f4, MOV
+            depth = 0; // 0x1e0f8, MOV
+          } // if 
+          if ((dst != 0)) {
+            retpos = 0; // 0x1e104, MOV
+            (*(((dst + len) - 1))) = 32; // 0x1e110, STRB
+          } else {
+            retpos = 0; // 0x1e108, MOV
+          } // if 
+        } // if 
+      } else {
+        if (((crtpos + 2) <= clen)) {
+          ssa_R3_6 = c[1]; // 0x1e1a4, LDRB
+          depth = (depth + 1); // 0x1e1a8, ADD
+          if ((retpos == 0)) {
+            retpos = (crtpos + 2); // 0x1e1ac, MOV
+          } // if 
+          ssa_R11_3 = (ssa_R2_1 & 63); // 0x1e1b0, AND
+          crtpos = (ssa_R3_6 | (ssa_R11_3 << 8)); // 0x1e1b4, ORR
+        } else {
+          goto L0x1e0c4;
+        } // if 
+      } // if 
+      if ((((depth <= 6) || ((depth <= 6) && (depth >= 0))) && ((depth > 6) || ((len <= 6150) && (len >= 0))))) {
+        continue;
+      } // if 
+       L0x1e0c4:
+      ret = 0; // 0x1e0c4, MOV
+      break;
+    } // if 
+  }  // loop 
+  return ret;
+}

@@ -13,3 +13,5 @@ static NOINLINE void attach_option(
 		const struct dhcp_optflag *optflag,
 		char *buffer,
 		int length);
+
+const char dhcp_option_strings[232];

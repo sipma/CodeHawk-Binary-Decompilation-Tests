@@ -1,0 +1,535 @@
+
+// Lifted code for function 0xd548
+// --------------------------------------------------
+// Function decompilation
+
+void * xmalloc(unsigned int size) {
+  unsigned char * ptr;
+  unsigned int tmp;
+
+  ptr = malloc(size); // 0xd550, BL
+  tmp = (1 - ptr); // 0xd554, RSB
+  if ((ptr > 1)) {
+    tmp = 0; // 0xd558, MOV
+  } // if 
+  if ((size == 0)) {
+    tmp = 0; // 0xd560, MOV
+  } // if 
+  if ((tmp == 0)) {
+    return ptr;
+  } // if 
+  bb_error_msg_and_die("out of memory"); // 0xd570, BL
+}
+
+// Lifted code for function 0xd578
+// --------------------------------------------------
+// Function decompilation
+
+void * xrealloc(void * old, unsigned int size) {
+  unsigned char * ptr;
+  unsigned int tmp;
+
+  ptr = realloc(old, size); // 0xd580, BL
+  tmp = (1 - ptr); // 0xd584, RSB
+  if ((ptr > 1)) {
+    tmp = 0; // 0xd588, MOV
+  } // if 
+  if ((size == 0)) {
+    tmp = 0; // 0xd590, MOV
+  } // if 
+  if ((tmp == 0)) {
+    return ptr;
+  } // if 
+  bb_error_msg_and_die("out of memory"); // 0xd5a0, BL
+}
+
+// Lifted code for function 0xd5a8
+// --------------------------------------------------
+// Function decompilation
+
+void * xzalloc(unsigned int size) {
+  unsigned char * rtn_xmalloc__0;
+
+  rtn_xmalloc__0 = xmalloc(size); // 0xd5b0, BL
+  memset(rtn_xmalloc__0, 0, size); // 0xd5c0, BL
+  return rtn_xmalloc__0;
+}
+
+// Lifted code for function 0xd5cc
+// --------------------------------------------------
+// Function decompilation
+
+char * xstrdup(char * s) {
+  char * rtn_strdup__0;
+
+  if ((s != 0)) {
+    rtn_strdup__0 = strdup(s); // 0xd5e0, BL
+    if ((rtn_strdup__0 != 0)) {
+      return rtn_strdup__0;
+    } // if 
+    bb_error_msg_and_die("out of memory"); // 0xd5f0, BL
+  } else {
+    return (char *)0;
+  } // if 
+}
+
+// Lifted code for function 0xd648
+// --------------------------------------------------
+// Function decompilation
+
+struct _IO_FILE * xfopen(char * filename, char * mode) {
+  struct _IO_FILE * rtn_fopen64__0;
+
+  rtn_fopen64__0 = fopen64(filename, mode); // 0xd650, BL
+  if ((rtn_fopen64__0 != 0)) {
+    return rtn_fopen64__0;
+  } // if 
+  bb_perror_msg_and_die("can't open '%s'", filename); // 0xd664, BL
+}
+
+// Lifted code for function 0xd66c
+// --------------------------------------------------
+// Function decompilation
+
+int xopen3(char * pathname, int flags, int mode) {
+  int rtn_open64__0;
+
+  rtn_open64__0 = open64(pathname, flags, mode); // 0xd674, BL
+  if ((rtn_open64__0 >= 0)) {
+    return rtn_open64__0;
+  } // if 
+  bb_perror_msg_and_die("can't open '%s'", pathname); // 0xd688, BL
+}
+
+// Lifted code for function 0xd690
+// --------------------------------------------------
+// Function decompilation
+
+int xopen(char * pathname, int flags) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = xopen3(pathname, flags, 438); // 0xd694, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xd698
+// --------------------------------------------------
+// Function decompilation
+
+int open3_or_warn(char * pathname, int flags, int mode) {
+  int rtn_open64__0;
+
+  rtn_open64__0 = open64(pathname, flags, mode); // 0xd6a0, BL
+  if ((rtn_open64__0 < 0)) {
+    bb_perror_msg("can't open '%s'", pathname); // 0xd6b4, BL
+  } // if 
+  return rtn_open64__0;
+}
+
+// Lifted code for function 0xd6c4
+// --------------------------------------------------
+// Function decompilation
+
+int open_or_warn(char * pathname, int flags) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = open3_or_warn(pathname, flags, 438); // 0xd6c8, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xd6cc
+// --------------------------------------------------
+// Function decompilation
+
+void xunlink(char * pathname) {
+  int rtn_unlink__0;
+
+  rtn_unlink__0 = unlink(pathname); // 0xd6d4, BL
+  if ((rtn_unlink__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("can't remove file '%s'", pathname); // 0xd6e8, BL
+}
+
+// Lifted code for function 0xd6f0
+// --------------------------------------------------
+// Function decompilation
+
+void xrename(char * oldpath, char * newpath) {
+  int rtn_rename__0;
+
+  rtn_rename__0 = rename(oldpath, newpath); // 0xd6fc, BL
+  if ((rtn_rename__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("can't move '%s' to '%s'", oldpath, newpath); // 0xd714, BL
+}
+
+// Lifted code for function 0xd71c
+// --------------------------------------------------
+// Function decompilation
+
+void xpipe(int * filedes) {
+  int rtn_pipe__0;
+
+  rtn_pipe__0 = pipe(filedes); // 0xd720, BL
+  if ((rtn_pipe__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("can't create pipe"); // 0xd730, BL
+}
+
+// Lifted code for function 0xd738
+// --------------------------------------------------
+// Function decompilation
+
+void xdup2(int x1, int x2) {
+  int rtn_dup2__0;
+
+  rtn_dup2__0 = dup2(x1, x2); // 0xd740, BL
+  if ((rtn_dup2__0 == x2)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("can't duplicate file descriptor"); // 0xd750, BL
+}
+
+// Lifted code for function 0xd758
+// --------------------------------------------------
+// Function decompilation
+
+void xmove_fd(int x1, int x2) {
+  int ssa_R0_3;
+
+  if ((x1 == x2)) {
+    return;
+  } // if 
+  xdup2(x1, x2); // 0xd768, BL
+  ssa_R0_3 = close(x1); // 0xd774, BL
+  return;
+}
+
+// Lifted code for function 0xd778
+// --------------------------------------------------
+// Function decompilation
+
+void xwrite(int fd, void * buf, unsigned int count) {
+  int rtn_full_write__0;
+
+  if ((count == 0)) {
+    return;
+  } // if 
+  rtn_full_write__0 = full_write(fd, buf, count); // 0xd784, BL
+  if ((rtn_full_write__0 == count)) {
+    return;
+  } // if 
+  bb_error_msg_and_die("short write"); // 0xd794, BL
+}
+
+// Lifted code for function 0xd79c
+// --------------------------------------------------
+// Function decompilation
+
+void xwrite_str(int fd, char * str) {
+  unsigned int rtn_strlen__0;
+
+  rtn_strlen__0 = strlen(str); // 0xd7ac, BL
+  xwrite(fd, str, rtn_strlen__0); // 0xd7c0, BL
+  return;
+}
+
+// Lifted code for function 0xd7c4
+// --------------------------------------------------
+// Function decompilation
+
+void xclose(int fd) {
+  int rtn_close__0;
+
+  rtn_close__0 = close(fd); // 0xd7c8, BL
+  if ((rtn_close__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("close failed"); // 0xd7d8, BL
+}
+
+// Lifted code for function 0xd838
+// --------------------------------------------------
+// Function decompilation
+
+int xmkstemp(char * template) {
+  int rtn_mkstemp64__0;
+
+  rtn_mkstemp64__0 = mkstemp64(template); // 0xd840, BL
+  if ((rtn_mkstemp64__0 >= 0)) {
+    return rtn_mkstemp64__0;
+  } // if 
+  bb_perror_msg_and_die("can't create temp file '%s'", template); // 0xd854, BL
+}
+
+// Lifted code for function 0xd85c
+// --------------------------------------------------
+// Function decompilation
+
+void die_if_ferror(struct _IO_FILE * file, char * msg) {
+  int rtn_ferror__0;
+
+  rtn_ferror__0 = ferror(file); // 0xd864, BL
+  if ((rtn_ferror__0 == 0)) {
+    return;
+  } // if 
+  bb_error_msg_and_die("%s: I/O error", msg); // 0xd878, BL
+}
+
+// Lifted code for function 0xd898
+// --------------------------------------------------
+// Function decompilation
+
+int fflush_all(void) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = fflush(0); // 0xd89c, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xd950
+// --------------------------------------------------
+// Function decompilation
+
+void xsetenv(char * key, char * value) {
+  int rtn_setenv__0;
+
+  rtn_setenv__0 = setenv(key, value, 1); // 0xd958, BL
+  if ((rtn_setenv__0 == 0)) {
+    return;
+  } // if 
+  bb_error_msg_and_die("out of memory"); // 0xd968, BL
+}
+
+// Lifted code for function 0xd970
+// --------------------------------------------------
+// Function decompilation
+
+void bb_unsetenv(char * key) {
+  char * rtn_strchr__0;
+  char * rtn_xstrndup__0;
+  int ssa_R0_3;
+
+  rtn_strchr__0 = strchr(key, 61); // 0xd97c, BL
+  if ((rtn_strchr__0 != 0)) {
+    rtn_xstrndup__0 = xstrndup(key, (int)(rtn_strchr__0 - key)); // 0xd998, BL
+    unsetenv(rtn_xstrndup__0); // 0xd9a0, BL
+    free(rtn_xstrndup__0); // 0xd9ac, BL
+    return;
+  } else {
+    ssa_R0_3 = unsetenv(key); // 0xd990, BL
+    return;
+  } // if 
+}
+
+// Lifted code for function 0xd9b0
+// --------------------------------------------------
+// Function decompilation
+
+void bb_unsetenv_and_free(char * key) {
+
+  bb_unsetenv(key); // 0xd9b8, BL
+  free(key); // 0xd9c4, BL
+  return;
+}
+
+// Lifted code for function 0xd9c8
+// --------------------------------------------------
+// Function decompilation
+
+void xsetgid(unsigned int gid) {
+  int rtn_setgid__0;
+
+  rtn_setgid__0 = setgid(gid); // 0xd9cc, BL
+  if ((rtn_setgid__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("setgid"); // 0xd9dc, BL
+}
+
+// Lifted code for function 0xd9e4
+// --------------------------------------------------
+// Function decompilation
+
+void xsetuid(unsigned int uid) {
+  int rtn_setuid__0;
+
+  rtn_setuid__0 = setuid(uid); // 0xd9e8, BL
+  if ((rtn_setuid__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("setuid"); // 0xd9f8, BL
+}
+
+// Lifted code for function 0xda00
+// --------------------------------------------------
+// Function decompilation
+
+void xchdir(char * path) {
+  int rtn_chdir__0;
+
+  rtn_chdir__0 = chdir(path); // 0xda08, BL
+  if ((rtn_chdir__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("chdir(%s)", path); // 0xda1c, BL
+}
+
+// Lifted code for function 0xda24
+// --------------------------------------------------
+// Function decompilation
+
+void xchroot(char * path) {
+  int rtn_chroot__0;
+
+  rtn_chroot__0 = chroot(path); // 0xda2c, BL
+  if ((rtn_chroot__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("can't change root directory to %s", path); // 0xda40, BL
+}
+
+// Lifted code for function 0xda48
+// --------------------------------------------------
+// Function decompilation
+
+struct __dirstream * warn_opendir(char * path) {
+  struct __dirstream * rtn_opendir__0;
+
+  rtn_opendir__0 = opendir(path); // 0xda50, BL
+  if ((rtn_opendir__0 == 0)) {
+    bb_perror_msg("can't open '%s'", path); // 0xda64, BL
+  } // if 
+  return rtn_opendir__0;
+}
+
+// Lifted code for function 0xda74
+// --------------------------------------------------
+// Function decompilation
+
+struct __dirstream * xopendir(char * path) {
+  struct __dirstream * rtn_opendir__0;
+
+  rtn_opendir__0 = opendir(path); // 0xda7c, BL
+  if ((rtn_opendir__0 != 0)) {
+    return rtn_opendir__0;
+  } // if 
+  bb_perror_msg_and_die("can't open '%s'", path); // 0xda90, BL
+}
+
+// Lifted code for function 0xda98
+// --------------------------------------------------
+// Function decompilation
+
+int xsocket(int domain, int type, int protocol) {
+  int rtn_socket__0;
+  char * ssa_R1_1;
+
+  rtn_socket__0 = socket(domain, type, protocol); // 0xdaa8, BL
+  if ((rtn_socket__0 >= 0)) {
+    return rtn_socket__0;
+  } // if 
+  if ((domain == 17)) {
+    ssa_R1_1 = 0x5ecc3; // 0xdab8, LDR
+  } // if 
+  if ((domain != 17)) {
+    if ((domain == 16)) {
+      ssa_R1_1 = 0x5d4d5; // 0xdad4, LDR
+    } // if 
+    if ((domain != 16)) {
+      ssa_R1_1 = 0x5d4cf; // 0xdae4, LDR
+      if ((domain != 10)) {
+        ssa_R1_1 = 0x5d4ca; // 0xdae8, MOV
+      } // if 
+    } // if 
+  } // if 
+  bb_perror_msg_and_die("socket(AF_%s,%d,%d)", ssa_R1_1, type, protocol); // 0xdacc, BL
+}
+
+// Lifted code for function 0xdb04
+// --------------------------------------------------
+// Function decompilation
+
+void xbind(int sockfd, struct sockaddr * my_addr, unsigned int addrlen) {
+  int rtn_bind__0;
+
+  rtn_bind__0 = bind(sockfd, my_addr, (int)addrlen); // 0xdb08, BL
+  if ((rtn_bind__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("bind"); // 0xdb18, BL
+}
+
+// Lifted code for function 0xdb20
+// --------------------------------------------------
+// Function decompilation
+
+void xlisten(int s, int backlog) {
+  int rtn_listen__0;
+
+  rtn_listen__0 = listen(s, backlog); // 0xdb24, BL
+  if ((rtn_listen__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("listen"); // 0xdb34, BL
+}
+
+// Lifted code for function 0xdb3c
+// --------------------------------------------------
+// Function decompilation
+
+int xsendto(int s, void * buf, unsigned int len, struct sockaddr * to, unsigned int tolen) {
+  int rtn_sendto__0;
+
+  rtn_sendto__0 = sendto(s, (unsigned char *)buf, len, 0, to, (int)tolen); // 0xdb50, BL
+  if ((rtn_sendto__0 >= 0)) {
+    return rtn_sendto__0;
+  } else {
+    bb_perror_msg_and_die("sendto"); // 0xdb60, BL
+  } // if 
+}
+
+// Lifted code for function 0xdb6c
+// --------------------------------------------------
+// Function decompilation
+
+void xstat(char * pathname, struct stat * buf) {
+  int rtn_stat64__0;
+
+  rtn_stat64__0 = stat64(pathname, buf); // 0xdb74, BL
+  if ((rtn_stat64__0 == 0)) {
+    return;
+  } // if 
+  bb_perror_msg_and_die("can't stat '%s'", pathname); // 0xdb88, BL
+}
+
+// Lifted code for function 0xdb90
+// --------------------------------------------------
+// Function decompilation
+
+void xfstat(int fd, struct stat * buf, char * errmsg) {
+  int rtn_fstat64__0;
+
+  rtn_fstat64__0 = fstat64(fd, buf); // 0xdb98, BL
+  if ((rtn_fstat64__0 == 0)) {
+    return;
+  } // if 
+  bb_simple_perror_msg_and_die(errmsg); // 0xdba8, BL
+}
+
+// Lifted code for function 0xdc8c
+// --------------------------------------------------
+// Function decompilation
+
+int xfork(void) {
+  unsigned int rtn_fork__0;
+
+  rtn_fork__0 = fork(); // 0xdc90, BL
+  if ((rtn_fork__0 >= 0)) {
+    return rtn_fork__0;
+  } // if 
+  bb_perror_msg_and_die("fork"); // 0xdca0, BL
+}

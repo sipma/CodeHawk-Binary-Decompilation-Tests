@@ -1,0 +1,104 @@
+
+// Lifted code for function 0x54d38
+// --------------------------------------------------
+// Function decompilation
+
+unsigned long fast_strtoul_16(char * * endptr) {
+  char * ssa_R2_0;
+  unsigned char ssa_R1_0;
+  char ssa_R1_2;
+  unsigned char ssa_R12_0;
+  unsigned int ssa_R3_0;
+
+  ssa_R2_0 = (*(endptr)); // 0x54d38, LDR
+  ssa_R3_0 = 0; // 0x54d3c, MOV
+  while (1) {
+    ssa_R1_0 = (*(ssa_R2_0)); // 0x54d40, LDRB
+    if ((ssa_R1_0 == 32)) {
+      (*(endptr)) = ssa_R2_0; // 0x54d6c, STR
+      return ssa_R3_0;
+    } else {
+      ssa_R12_0 = (ssa_R1_0 | 32); // 0x54d4c, ORR
+      ssa_R1_2 = ((ssa_R12_0 - 48) & 255); // 0x54d54, UXTB
+      if (((ssa_R1_2 > 9) || (ssa_R1_2 < 0))) {
+        ssa_R1_2 = ((ssa_R12_0 - 87) & 255); // 0x54d60, UXTB
+      } // if 
+      ssa_R3_0 = (ssa_R1_2 + (ssa_R3_0 << 4)); // 0x54d64, ADD
+    } // if 
+  }  // loop 
+}
+
+// Lifted code for function 0x54db8
+// --------------------------------------------------
+// Function decompilation
+
+char * skip_fields(char * str, int count) {
+  char * ssa_R0_1;
+  char * ssa_R3_0;
+  unsigned char ssa_R2_0;
+  int ssa_R1_0;
+
+  ssa_R3_0 = str; // 0x54db8, MOV
+  while (1) {
+     L0x54dbc:
+    ssa_R0_1 = ssa_R3_0; // 0x54dbc, MOV
+    break;
+  }  // loop 
+  while (1) {
+    ssa_R2_0 = (*(ssa_R0_1)); // 0x54dc0, LDRB
+    ssa_R3_0 = ssa_R0_1; // 0x54dc8, MOV
+    if ((ssa_R2_0 == 32)) {
+      ssa_R1_0 = (ssa_R1_0 - 1); // 0x54dd0, SUB
+      if ((ssa_R1_0 != 1)) {
+        goto L0x54dbc;
+      } else {
+        return ssa_R0_1;
+      } // if 
+    } // if 
+  }  // loop 
+}
+
+// Lifted code for function 0x54ddc
+// --------------------------------------------------
+// Function decompilation
+
+void clear_cache(struct cache_t * cp) {
+
+  free(cp->cache); // 0x54de8, BL
+  cp->cache = 0; // 0x54df0, STR
+  cp->size = 0; // 0x54df4, STR
+  return;
+}
+
+// Lifted code for function 0x54ee0
+// --------------------------------------------------
+// Function decompilation
+
+void clear_username_cache(void) {
+
+  clear_cache(&(username)); // 0x54ee8, BL
+  clear_cache(&(groupname)); // 0x54ef4, BL
+  return;
+}
+
+// Lifted code for function 0x54f00
+// --------------------------------------------------
+// Function decompilation
+
+char * get_cached_username(unsigned int uid) {
+  char * ssa_R0_2;
+
+  ssa_R0_2 = get_cached(&(username), uid, (char * (unsigned int id) *)&(uid2uname_utoa)); // 0x54f0c, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0x54f18
+// --------------------------------------------------
+// Function decompilation
+
+char * get_cached_groupname(unsigned int gid) {
+  char * ssa_R0_2;
+
+  ssa_R0_2 = get_cached(&(groupname), gid, (char * (unsigned int id) *)&(gid2group_utoa)); // 0x54f24, BL
+  return ssa_R0_2;
+}

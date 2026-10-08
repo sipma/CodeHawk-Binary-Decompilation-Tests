@@ -1,0 +1,118 @@
+
+// Lifted code for function 0xd054
+// --------------------------------------------------
+// Function decompilation
+
+int wh_helper(int value, int def_val, char * env_name, int * err) {
+  int ssa_R5_1;
+  char * rtn_getenv__0;
+  int rtn_atoi__0;
+  int ssa_R0_3;
+
+  ssa_R5_1 = value; // 0xd058, SUB
+  if ((value == 0)) {
+    rtn_getenv__0 = getenv(env_name); // 0xd06c, BL
+    if ((rtn_getenv__0 != 0)) {
+      rtn_atoi__0 = atoi(rtn_getenv__0); // 0xd078, BL
+      (*(err)) = 0; // 0xd080, STR
+      ssa_R5_1 = rtn_atoi__0; // 0xd084, MOV
+    } // if 
+  } // if 
+  if (((ssa_R5_1 - 2) <= 0x752d)) {
+    ssa_R0_3 = ssa_R5_1; // 0xd094, MOV
+  } else {
+    ssa_R0_3 = def_val; // 0xd098, MOV
+  } // if 
+  return ssa_R0_3;
+}
+
+// Lifted code for function 0xd0a0
+// --------------------------------------------------
+// Function decompilation
+
+void ndelay_on(int fd) {
+  int rtn_fcntl64__0;
+  int ssa_R0_2;
+
+  rtn_fcntl64__0 = fcntl64(fd, 3); // 0xd0ac, BL
+  if (((rtn_fcntl64__0 & 2048) != 0)) {
+    return;
+  } // if 
+  ssa_R0_2 = fcntl64(fd, 4); // 0xd0cc, BL
+  return;
+}
+
+// Lifted code for function 0xd0d0
+// --------------------------------------------------
+// Function decompilation
+
+void ndelay_off(int fd) {
+  int rtn_fcntl64__0;
+  int ssa_R0_2;
+
+  rtn_fcntl64__0 = fcntl64(fd, 3); // 0xd0dc, BL
+  if (((rtn_fcntl64__0 & 2048) == 0)) {
+    return;
+  } // if 
+  ssa_R0_2 = fcntl64(fd, 4); // 0xd0fc, BL
+  return;
+}
+
+// Lifted code for function 0xd100
+// --------------------------------------------------
+// Function decompilation
+
+void close_on_exec_on(int fd) {
+  int ssa_R0_1;
+
+  ssa_R0_1 = fcntl64(fd, 2); // 0xd108, BL
+  return;
+}
+
+// Lifted code for function 0xd10c
+// --------------------------------------------------
+// Function decompilation
+
+char * strncpy_IFNAMSIZ(char * dst, char * src) {
+  char * ssa_R0_1;
+
+  ssa_R0_1 = strncpy(dst, src, 16); // 0xd110, BL
+  return ssa_R0_1;
+}
+
+// Lifted code for function 0xd37c
+// --------------------------------------------------
+// Function decompilation
+
+int full_write1_str(char * str) {
+  unsigned int rtn_strlen__0;
+  int ssa_R0_2;
+
+  rtn_strlen__0 = strlen(str); // 0xd384, BL
+  ssa_R0_2 = full_write(1, str, rtn_strlen__0); // 0xd398, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xd39c
+// --------------------------------------------------
+// Function decompilation
+
+int full_write2_str(char * str) {
+  unsigned int rtn_strlen__0;
+  int ssa_R0_2;
+
+  rtn_strlen__0 = strlen(str); // 0xd3a4, BL
+  ssa_R0_2 = full_write(2, str, rtn_strlen__0); // 0xd3b8, BL
+  return ssa_R0_2;
+}
+
+// Lifted code for function 0xd458
+// --------------------------------------------------
+// Function decompilation
+
+int tcsetattr_stdin_TCSANOW(struct termios * tp) {
+  int ssa_R0_2;
+
+  ssa_R0_2 = tcsetattr(0, 0, tp); // 0xd464, BL
+  return ssa_R0_2;
+}

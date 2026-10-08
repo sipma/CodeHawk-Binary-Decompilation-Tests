@@ -1,7 +1,7 @@
 export BINARY="binary"
 export ORIGINAL_BINARY="../../shareddata/busybox"
 export FNS_INCLUDE="0xdca8 0xdddc 0xde04 0xde64"
-export FNS_AST="0xde64"
+export FNS_LIFTED="0xde64"
 export FNS_PENDING_OTHER=""
 export FNS_PENDING_TYPING="0xdddc"
 export FNS_PENDING_ERRORS="0xdca8 0xde04"
