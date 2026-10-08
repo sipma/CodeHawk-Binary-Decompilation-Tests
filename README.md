@@ -18,10 +18,12 @@ identified by the first 8 characters of its MD5 hash:
 
 Currently available:
 
-| Package | Hash | Description | Functions analyzed | Functions lifted |
-|---------|------|-------------|------:|-----:|
-| `busybox` | `8b996feb` | Busybox v1.19.4, ARM 32-bit ELF | 125 | 52 |
-| `openssl` | `6f891f26` | OpenSSL 1.0.1g libcrypto, ARM 32-bit ELF | 379 | 169 |
+| Package | Binary MD5 prefix | Description |
+|---------|------|-------------|
+| `busybox` | `8b996feb` | Busybox v1.19.4, ARM 32-bit ELF |
+| `openssl` | `6f891f26` | OpenSSL 1.0.1g libcrypto, ARM 32-bit ELF |
+
+The number of functions analyzed and lifted per binary is shown in [STATUS](STATUS.md).
 
 ## Prerequisites
 
@@ -50,3 +52,11 @@ The scripts must be run in order, as each depends on the output of the previous:
 | `test.00.ch-analyze.notime.pass.sh` | Analyze the selected functions in the binary |
 | `test.01.ch-produce-pir.notime.pass.sh` | Produce PIR (decompiled output) for the functions |
 | `test.02.ch-check-liftings.notime.pass.sh` | Compare the output against the expected liftings |
+| `test.10.check-errors.sh` | Lift the functions in `FNS_PENDING_ERRORS`, recording errors in `logs/error_log.json` |
+
+
+## Results
+
+A more detailed breakdown of the current results and limitations are shown in the overview pages
+- [STATUS](STATUS.md), and
+- [ERRORS](ERRORS.md)
