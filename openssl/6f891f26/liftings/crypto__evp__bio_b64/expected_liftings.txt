@@ -8,6 +8,35 @@ struct bio_method_st * BIO_f_base64(void) {
   return &(methods_b64);
 }
 
+// Lifted code for function 0xcaeb4
+// --------------------------------------------------
+// Function decompilation
+
+int b64_new(struct bio_st * bi) {
+  int ssa_R1_2;
+  struct b64_struct * ctx;
+
+  ctx = CRYPTO_malloc(2652, "bio_b64.c", 116); // 0xcaed4, BL
+  if ((ctx == 0)) {
+    ssa_R1_2 = 0; // 0xcaedc, MOV
+  } // if 
+  if ((ctx != 0)) {
+    ssa_R1_2 = 1; // 0xcaeec, MOV
+    ctx->buf_len = 0; // 0xcaef0, STR
+    ctx->tmp_len = 0; // 0xcaef4, STR
+    ctx->tmp_nl = 0; // 0xcaef8, STR
+    ctx->buf_off = 0; // 0xcaefc, STR
+    ctx->cont = 1; // 0xcaf00, STR
+    ctx->start = 1; // 0xcaf04, STR
+    ctx->encode = 0; // 0xcaf08, STR
+    bi->ptr = ctx; // 0xcaf0c, STR
+    bi->num = 0; // 0xcaf10, STR
+    bi->init = 1; // 0xcaf14, STR
+    bi->flags = 0; // 0xcaf18, STR
+  } // if 
+  return ssa_R1_2;
+}
+
 // Lifted code for function 0xcbe78
 // --------------------------------------------------
 // Function decompilation

@@ -43,21 +43,19 @@ struct ui_method_st * UI_set_method(struct ui_st * ui, struct ui_method_st * met
 
 int UI_ctrl(struct ui_st * ui, int cmd, long i, void * p, void (*f)(void)) {
   int ret;
-  int ssa_R3_2;
+  int ssa_R3_3;
 
   if ((ui == 0)) {
     ERR_put_error(40, 111, 67, "ui_lib.c", "	"); // 0x11ab6c, BL
     ret = -1; // 0x11ab70, MVN
   } else {
     if ((cmd == 1)) {
-      ssa_R3_2 = ((unsigned int)ui->flags >> 8); // 0x11ab28, LSR
       ret = (((unsigned int)ui->flags >> 8) & 1); // 0x11ab2c, AND
       if ((i != 0)) {
-        ssa_R3_2 = (ui->flags | 256); // 0x11ab30, ORR
-        ui->flags = ssa_R3_2; // 0x11ab38, STR
+        ssa_R3_3 = (ui->flags | 256); // 0x11ab30, ORR
+        ui->flags = ssa_R3_3; // 0x11ab38, STR
       } else {
-        ssa_R3_2 = (ui->flags & ~256); // 0x11ab34, BIC
-        ui->flags = ssa_R3_2; // 0x11ab3c, STR
+        ui->flags = (ui->flags & ~256); // 0x11ab3c, STR
       } // if 
     } else {
       if ((cmd == 2)) {
