@@ -269,7 +269,7 @@
             "0xd6c4": "open_or_warn",
             "0xd6cc": "xunlink",
             "0xd6f0": "xrename",
-            "0xd720": "xpipe",
+            "0xd71c": "xpipe",
             "0xd738": "xdup2",
             "0xd758": "xmove_fd",
             "0xd778": "xwrite",

@@ -527,6 +527,9 @@ extern struct mntent *getmntent_r (FILE *__restrict __stream,
 extern int endmntent (FILE *__stream) __attribute__ ((__nothrow__ , __leaf__));
 
 // # 389 "/usr/include/sys/stat.h" 3 4
+
+typedef struct stat ch__stat;
+
 extern int mknod (const char *__path, __mode_t __mode, __dev_t __dev)
      __attribute__ ((__nothrow__ , __leaf__)) __attribute__ ((__nonnull__ (1)));
 
