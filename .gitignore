@@ -71,3 +71,13 @@ dkms.conf
 *.chx.tar.gz
 *.i
 binary
+logs/
+generated_liftings*.txt
+pir_ast.json
+fns.txt
+ast.txt
+# error log produced by the check-errors scripts (now in logs/)
+error_log.json
+
+# Python
+__pycache__/
