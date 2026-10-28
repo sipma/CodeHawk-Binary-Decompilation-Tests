@@ -33,13 +33,11 @@ instructions are provided in the following repositories:
 - [CodeHawk Binary Analyzer](https://github.com/static-analysis-engineering/CodeHawk-Binary)
 - [CodeHawk OCaml Analyzer](https://github.com/static-analysis-engineering/codehawk/tree/master/CodeHawk) (required by the above)
 
-## Obtaining Binaries
+## Binaries
 
-The test binaries are not included in this repository. They can be obtained from
+The test binaries were obtained from
 [iot-binary-dataset](https://github.com/Aarno-Labs/iot-binary-dataset), a
-repository of IoT binaries of open-source code, organized by the same hash
-used here. See the `README.md` in each binary's directory for the exact
-location and setup instructions.
+repository of IoT binaries of open-source code.
 
 ## Running Tests
 

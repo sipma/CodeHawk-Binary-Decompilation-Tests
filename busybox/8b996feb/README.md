@@ -12,17 +12,6 @@
 | Debug info | not present (stripped) |
 | MD5 hash (first 8) | 8b996feb |
 
-## Obtaining the Binary
-
-The binary is not included in this repository. It can be downloaded from the
-[iot-binary-dataset](https://github.com/Aarno-Labs/iot-binary-dataset/tree/main/executables/8/b/996/feb)
-repository. Once obtained, place it at `shareddata/busybox` relative to this directory.
-
-Run the following command from the directory containing this README:
-```sh
-curl -L -o shareddata/busybox \
-  https://github.com/Aarno-Labs/iot-binary-dataset/raw/main/executables/8/b/996/feb/8b996feb
-```
 
 ## Header Files
 
