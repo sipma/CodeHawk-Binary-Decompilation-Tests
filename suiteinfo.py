@@ -162,9 +162,38 @@ def instruction_address(msg: str) -> Optional[int]:
     return int(m[-1], 16) if m else None
 
 
+def _error_log_records(f: Path) -> List[dict]:
+    """Return the raw records of an error log, in either format.
+
+    Current chkx versions write a single JSON document with the records in
+    its 'entries' list (next to 'runs', 'digest', ...); older versions write
+    one JSON record per line.
+    """
+    text = f.read_text(encoding="utf-8")
+    try:
+        doc = json.loads(text)
+    except json.JSONDecodeError:
+        doc = None
+    if isinstance(doc, dict) and isinstance(doc.get("entries"), list):
+        return doc["entries"]
+    if isinstance(doc, dict) and "log_id" in doc:
+        return [doc]          # line format, single record
+    records: List[dict] = []
+    for (n, line) in enumerate(text.splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            records.append(json.loads(line))
+        except json.JSONDecodeError as e:
+            raise VarsError(f"{f}:{n}: malformed JSON record: {e}")
+    return records
+
+
 def read_error_log(d: Path) -> Optional[List[ErrorRecord]]:
     """Return the deduplicated records of d/logs/error_log.json.
 
+    Both the current chkx log format (one JSON document with an 'entries'
+    list) and the older format (one JSON record per line) are accepted.
     Records that are identical apart from the timestamp are reported only
     once. Returns None if the log does not exist.
     """
@@ -173,27 +202,20 @@ def read_error_log(d: Path) -> Optional[List[ErrorRecord]]:
         return None
     seen = set()
     result: List[ErrorRecord] = []
-    with f.open(encoding="utf-8") as fp:
-        for (n, line) in enumerate(fp, 1):
-            if not line.strip():
-                continue
-            try:
-                r = json.loads(line)
-            except json.JSONDecodeError as e:
-                raise VarsError(f"{f}:{n}: malformed JSON record: {e}")
-            key = (
-                r.get("log_id"), r.get("faddr"), r.get("msg"), r.get("module"),
-                r.get("line"))
-            if key in seen:
-                continue
-            seen.add(key)
-            msg = r.get("msg", "")
-            result.append(ErrorRecord(
-                r.get("log_id", "MISC-NOTAGID-0001"), msg,
-                r.get("module", "?"), r.get("line", 0),
-                instruction_address(msg),
-                int(r["faddr"], 16) if r.get("faddr") else None,
-                r.get("exception")))
+    for r in _error_log_records(f):
+        key = (
+            r.get("log_id"), r.get("faddr"), r.get("msg"), r.get("module"),
+            r.get("line"))
+        if key in seen:
+            continue
+        seen.add(key)
+        msg = r.get("msg", "")
+        result.append(ErrorRecord(
+            r.get("log_id", "MISC-NOTAGID-0001"), msg,
+            r.get("module", "?"), r.get("line", 0),
+            instruction_address(msg),
+            int(r["faddr"], 16) if r.get("faddr") else None,
+            r.get("exception")))
     return result
 
 
