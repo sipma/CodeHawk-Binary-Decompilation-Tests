@@ -1,48 +1,4 @@
 
-// Lifted code for function 0xd548
-// --------------------------------------------------
-// Function decompilation
-
-void * xmalloc(unsigned int size) {
-  unsigned char * ptr;
-  unsigned int tmp;
-
-  ptr = malloc(size); // 0xd550, BL
-  tmp = (1 - ptr); // 0xd554, RSB
-  if ((ptr > 1)) {
-    tmp = 0; // 0xd558, MOV
-  } // if 
-  if ((size == 0)) {
-    tmp = 0; // 0xd560, MOV
-  } // if 
-  if ((tmp == 0)) {
-    return ptr;
-  } // if 
-  bb_error_msg_and_die("out of memory"); // 0xd570, BL
-}
-
-// Lifted code for function 0xd578
-// --------------------------------------------------
-// Function decompilation
-
-void * xrealloc(void * old, unsigned int size) {
-  unsigned char * ptr;
-  unsigned int tmp;
-
-  ptr = realloc(old, size); // 0xd580, BL
-  tmp = (1 - ptr); // 0xd584, RSB
-  if ((ptr > 1)) {
-    tmp = 0; // 0xd588, MOV
-  } // if 
-  if ((size == 0)) {
-    tmp = 0; // 0xd590, MOV
-  } // if 
-  if ((tmp == 0)) {
-    return ptr;
-  } // if 
-  bb_error_msg_and_die("out of memory"); // 0xd5a0, BL
-}
-
 // Lifted code for function 0xd5a8
 // --------------------------------------------------
 // Function decompilation
